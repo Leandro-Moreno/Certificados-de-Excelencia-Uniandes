@@ -1,0 +1,22 @@
+<table>
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+				<th>Correo</th>
+        <th>Tipo_Documento</th>
+        <th>Documento</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach($asistentes as $asistente)
+        <tr>
+            <td>{{$asistente->usuarios->name}}</td>
+            <td>{{$asistente->usuarios->apellido}}</td>
+						<td>{{$asistente->usuarios->email}}</td>
+            <td>{{$asistente->usuarios->tipo_doc}}</td>
+            <td>{{$asistente->usuarios->documento}}</td>
+        </tr>
+    @endforeach
+    </tbody>
+</table>

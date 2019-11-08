@@ -12,11 +12,11 @@ use App\Http\Controllers\Controller;
 
 class CertificadoController extends Controller
 {
-   /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    /**
+      * Display a listing of the resource.
+      *
+      * @return \Illuminate\Http\Response
+      */
     public function index(Evento $model)
     {
         return view('certificados.index', ['datos' => $model->paginate(15)]);
@@ -27,49 +27,45 @@ class CertificadoController extends Controller
       *
       * @return \Illuminate\Http\Response
       */
-     public function publico()
-     {
-         return view('certificados.publico');
-     }
+    public function publico()
+    {
+        return view('certificados.publico');
+    }
 
-     /**
-       * Display a listing of the resource.
-       *
-       * @return \Illuminate\Http\Response
-       */
-      public function validar(Request $request)
-      {
-          $this->Validate($request,[
+    /**
+      * Display a listing of the resource.
+      *
+      * @return \Illuminate\Http\Response
+      */
+    public function validar(Request $request)
+    {
+        $this->Validate($request, [
             'referencia' => 'required',
             'documento' => 'required'
           ]);
-          $referencia=$request->referencia;
-          if(strlen($referencia)==8){
-              $referencia = substr($referencia, 2);
-              $referencia = (int)$referencia;
-              $certificado = Asistente::where('asistencia',$referencia)->first();
-              if ($certificado) {
+        $referencia=$request->referencia;
+        if (strlen($referencia)==8) {
+            $referencia = substr($referencia, 2);
+            $referencia = (int)$referencia;
+            $certificado = Asistente::where('asistencia', $referencia)->first();
+            if ($certificado) {
                 if ($request->documento == $certificado->usuarios->documento) {
-                  return redirect('certificados/publico')->withStatus(__("El certificado $request->referencia le pertenece al Documento $request->documento"));
+                    return redirect('certificados/publico')->withStatus(__("El certificado $request->referencia le pertenece al Documento $request->documento"));
                 }
                 return redirect('certificados/publico')->with('error', 'NO se encuentra el certificado');
-
-              }
-              else {
+            } else {
                 return redirect('certificados/publico')->with('error', 'NO se encuentra el certificado');
-              }
-          }
-          else{
+            }
+        } else {
             return redirect('certificados/publico')->with('error', 'El número de referencia no es correcto');
-          }
+        }
+    }
 
-      }
-
-      public function pdf($evento, $user)
-      {
+    public function pdf($evento, $user)
+    {
         $usuario = User::find($user);
         $evento  = Evento::find($evento);
-        $asistencia = Asistente::where('user_id',$user)->where('evento_id',$evento->id)->first();
+        $asistencia = Asistente::where('user_id', $user)->where('evento_id', $evento->id)->first();
 
         if (!$usuario) {
             return redirect()->route('certificados')->with('error', '!Usuario no existe!');
@@ -80,30 +76,30 @@ class CertificadoController extends Controller
         }
 
         if (!$asistencia) {
-             return redirect()->route('certificados')->with('error', '!No asistió al evento!');
+            return redirect()->route('certificados')->with('error', '!No asistió al evento!');
         }
 
         if (Auth::user()->rol_id <= 2) {
-            $pdf = PDF::loadView('certificados.pdf',
-            ['asistencia' =>
-            $asistencia])
+            $pdf = PDF::loadView(
+                'certificados.pdf',
+                ['asistencia' =>
+            $asistencia]
+            )
             ->setPaper('letter', 'landscape');
             return $pdf->stream('certificado.pdf');
         }
-        if(Auth::user()->rol_id == 3){
-
+        if (Auth::user()->rol_id == 3) {
             if (Auth::user()->id == $usuario->id) {
-
-                $pdf = PDF::loadView('certificados.pdf',
-                 ['asistencia' =>
-                  $asistencia])
+                $pdf = PDF::loadView(
+                    'certificados.pdf',
+                    ['asistencia' =>
+                  $asistencia]
+                )
                   ->setPaper('letter', 'landscape');
                 return $pdf->stream('certificado.pdf');
             }
 
             return redirect()->route('certificados')->with('error', '¿Está perdido?');
         }
-
-      }
-
+    }
 }

@@ -17,7 +17,7 @@ class FirmaController extends Controller
      */
     public function index(Firma $model)
     {
-         return view('firmas.index', ['datos' => $model->paginate(15)]);
+        return view('firmas.index', ['datos' => $model->paginate(15)]);
     }
 
     /**

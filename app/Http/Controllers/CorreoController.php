@@ -27,16 +27,15 @@ class CorreoController extends Controller
      */
     public function update(Request $request, Correo $correo)
     {
-      $correo->host = $request->host;
-      $correo->driver = $request->driver;
-      $correo->port = $request->port;
-      $correo->encryption = $request->encryption;
-      $correo->username = $request->username;
-      $correo->password  = $request->password ;
-      $correo->address = $request->address;
-      $correo->name = $request->name;
-      $correo->save();
-      return redirect()->route('correo')->withStatus(__('Usuario actualizado con éxito.'));
+        $correo->host = $request->host;
+        $correo->driver = $request->driver;
+        $correo->port = $request->port;
+        $correo->encryption = $request->encryption;
+        $correo->username = $request->username;
+        $correo->password  = $request->password ;
+        $correo->address = $request->address;
+        $correo->name = $request->name;
+        $correo->save();
+        return redirect()->route('correo')->withStatus(__('Usuario actualizado con éxito.'));
     }
-
 }

@@ -44,7 +44,7 @@ class AsistenteController extends Controller
      */
     public function store(Request $request)
     {
-        $this->Validate($request,[
+        $this->Validate($request, [
             'evento' => 'required|',
             'asistentes' => 'mimes:xlsx',
         ]);
@@ -52,25 +52,22 @@ class AsistenteController extends Controller
         Excel::import(new UsersImport, $request->asistentes);
         $asistentes = (new UsersImport)->toArray($request->asistentes);
 
-        for ($i=0; $i < count($asistentes[0]); $i++)
-        {
+        for ($i=0; $i < count($asistentes[0]); $i++) {
             $email = $asistentes[0][$i]['correo_electronico'];
 
-           $user = User::where('email',$email)->first();
+            $user = User::where('email', $email)->first();
 
-            $noValido = Asistente::where('user_id',$user->id)->where('evento_id',$request->evento)->first();
+            $noValido = Asistente::where('user_id', $user->id)->where('evento_id', $request->evento)->first();
             $serial = Asistente::max('id');
 
-            if(!$noValido)
-            {
+            if (!$noValido) {
                 $asistencias = new Asistente;
                 $asistencias->evento_id = $request->evento;
                 $asistencias->user_id = $user->id;
                 if (is_null($serial)) {
-                  $asistencias->asistencia = 1;
-                }
-                else {
-                   $asistencias->asistencia = $serial+1;
+                    $asistencias->asistencia = 1;
+                } else {
+                    $asistencias->asistencia = $serial+1;
                 }
                 $asistencias->save();
                 //$user->notify(new UsuarioNuevo());
@@ -78,7 +75,6 @@ class AsistenteController extends Controller
         }
 
         return redirect()->route('asistentes')->withStatus(__('Asistentes agregados correctamente.'));
-
     }
 
     /**
@@ -89,7 +85,7 @@ class AsistenteController extends Controller
      */
     public function show($id, Evento $evento)
     {
-        $asistentes = Asistente::where('evento_id',$id)->get();
+        $asistentes = Asistente::where('evento_id', $id)->get();
         $evento = $evento->find($id);
         return view('asistentes.show', compact('evento'), ['datos' => $asistentes]);
     }
@@ -114,92 +110,86 @@ class AsistenteController extends Controller
 
     public function addAsistente($id, Request $request)
     {
-       $this->Validate($request,[
+        $this->Validate($request, [
           'email' => 'required|'
        ]);
-       $usuario = new User;
-       $usuario->name              = $request->name;
-       $usuario->name2             = $request->name2;
-       $usuario->apellido          = $request->apellido;
-       $usuario->apellido2         = $request->apellido2;
-       $usuario->email             = $request->email;
-       $usuario->tipo_doc          = $request->tipo_doc;
-       $usuario->documento         = $request->documento;
-       $usuario->profesion         = $request->profesion;
-       $usuario->cargo             = $request->cargo;
-       $usuario->celular           = $request->celular;
-       $usuario->direccion         = $request->direccion;
-       $usuario->medio             = $request->medio;
-       $usuario->tipo_persona      = $request->tipo_persona;
-       $usuario->asistencia_minima = $request->asistencia_minima;
-       $usuario->uso_datos         = 1;
-       $usuario->rol_id            = 3;
-       $usuario->password          = '0';
+        $usuario = new User;
+        $usuario->name              = $request->name;
+        $usuario->name2             = $request->name2;
+        $usuario->apellido          = $request->apellido;
+        $usuario->apellido2         = $request->apellido2;
+        $usuario->email             = $request->email;
+        $usuario->tipo_doc          = $request->tipo_doc;
+        $usuario->documento         = $request->documento;
+        $usuario->profesion         = $request->profesion;
+        $usuario->cargo             = $request->cargo;
+        $usuario->celular           = $request->celular;
+        $usuario->direccion         = $request->direccion;
+        $usuario->medio             = $request->medio;
+        $usuario->tipo_persona      = $request->tipo_persona;
+        $usuario->asistencia_minima = $request->asistencia_minima;
+        $usuario->uso_datos         = 1;
+        $usuario->rol_id            = 3;
+        $usuario->password          = '0';
 
-       $usuario->save();
+        $usuario->save();
 
-       $serial = Asistente::max('id');
+        $serial = Asistente::max('id');
 
-       $asistencias = new Asistente;
-       $asistencias->evento_id = $id;
-       $asistencias->user_id = $usuario->id;
-       if (is_null($serial)) {
-         $asistencias->asistencia = 1;
-       }
-       else {
-          $asistencias->asistencia = $serial+1;
-       }
-       $asistencias->save();
+        $asistencias = new Asistente;
+        $asistencias->evento_id = $id;
+        $asistencias->user_id = $usuario->id;
+        if (is_null($serial)) {
+            $asistencias->asistencia = 1;
+        } else {
+            $asistencias->asistencia = $serial+1;
+        }
+        $asistencias->save();
 
-       return redirect('asistentes/'.$id)->withStatus(__('Asistentes agregados correctamente.'));
-
+        return redirect('asistentes/'.$id)->withStatus(__('Asistentes agregados correctamente.'));
     }
 
     public function addAsistenteExistente($id, Request $request)
     {
-        $this->Validate($request,[
+        $this->Validate($request, [
             'usuario' => 'required|'
         ]);
 
-          $user = User::find($request->usuario);
-          $noValido = Asistente::where('user_id',$user->id)->where('evento_id',$id)->first();
-          $serial = Asistente::max('id');
+        $user = User::find($request->usuario);
+        $noValido = Asistente::where('user_id', $user->id)->where('evento_id', $id)->first();
+        $serial = Asistente::max('id');
 
-            if(!$noValido)
-            {
-                $asistencias = new Asistente;
-                $asistencias->evento_id = $id;
-                $asistencias->user_id = $request->usuario;
-                if (is_null($serial)) {
-                  $asistencias->asistencia = 1;
-                }
-                else {
-                   $asistencias->asistencia = $serial+1;
-                }
-                $asistencias->save();
+        if (!$noValido) {
+            $asistencias = new Asistente;
+            $asistencias->evento_id = $id;
+            $asistencias->user_id = $request->usuario;
+            if (is_null($serial)) {
+                $asistencias->asistencia = 1;
+            } else {
+                $asistencias->asistencia = $serial+1;
             }
-            else {
-               return redirect('asistentes/'.$id)->withStatus(__('Ya se agregó con anterioridad al evento'));
-            }
+            $asistencias->save();
+        } else {
+            return redirect('asistentes/'.$id)->withStatus(__('Ya se agregó con anterioridad al evento'));
+        }
 
-         return redirect('asistentes/'.$id)->withStatus(__('Asistentes agregados correctamente.'));
+        return redirect('asistentes/'.$id)->withStatus(__('Asistentes agregados correctamente.'));
     }
 
     public function findAsistente(Request $request)
     {
-      $usuario = User::where('email',$request->correo)->first();
-      if ($usuario) {
-
-        return response()->json([
+        $usuario = User::where('email', $request->correo)->first();
+        if ($usuario) {
+            return response()->json([
             'respuesta' => 1,
             'id' => $usuario->id,
             'nombre' => $usuario->name.' '.$usuario->name2.' '.$usuario->apellido.' '.$usuario->apellido2,
             'apellido2' => 'CA',
             'documento' => 'CA',
         ]);
-
-      }else{ return response()->json(['respuesta' => 0 ]); }
-
+        } else {
+            return response()->json(['respuesta' => 0 ]);
+        }
     }
 
 
@@ -211,11 +201,11 @@ class AsistenteController extends Controller
      */
     public function Enviocertificados($id)
     {
-      $asistencias = Asistente::where('evento_id',$id)->get();
-      foreach ($asistencias as $asistencia) {
-        $asistencia->usuarios->notify(new UsuarioNuevo());
-      }
-      return redirect()->route('asistentes')->withStatus(__('Mensajes enviados con éxito.'));
+        $asistencias = Asistente::where('evento_id', $id)->get();
+        foreach ($asistencias as $asistencia) {
+            $asistencia->usuarios->notify(new UsuarioNuevo());
+        }
+        return redirect()->route('asistentes')->withStatus(__('Mensajes enviados con éxito.'));
     }
 
 
@@ -230,7 +220,4 @@ class AsistenteController extends Controller
         $asistente->delete();
         return redirect()->route('asistentes')->withStatus(__('Usuario eliminado con éxito.'));
     }
-
-
-
 }

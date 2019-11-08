@@ -15,9 +15,7 @@ class UsersImport implements ToModel, WithHeadingRow
 
     public function model(array $row)
     {
-
-
-        $usuario = User::where('email',$row['correo_electronico'])->first();
+        $usuario = User::where('email', $row['correo_electronico'])->first();
 
         if ($usuario) {
             return null;
@@ -39,7 +37,7 @@ class UsersImport implements ToModel, WithHeadingRow
             'direccion' => $row['direccion_de_correspondencia'],
             'medio' => $row['medio_por_el_cual_se_entero'],
             'tipo_persona'=> $row['tipo_de_persona_externoestudiante_uniandes_empleado_uniandes_egresado_uniandes'],
-            'uso_datos' => $row['aceptacion_de_uso_de_datos'],      
+            'uso_datos' => $row['aceptacion_de_uso_de_datos'],
             'asistencia_minima' => $row['cumple_con_asistencia_minima'],
             'password' => 'x'
 
@@ -65,9 +63,4 @@ class UsersImport implements ToModel, WithHeadingRow
 
         ];
     }
-
-
-
-
-
 }

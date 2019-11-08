@@ -25,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         /* Solución a la migración del –users_email_unique(email)-- */
-         Schema::defaultStringLength(191);
+        Schema::defaultStringLength(191);
     }
 }

@@ -18,10 +18,10 @@ class CustomResetPasswordNotification extends Notification
      *
      * @return void
      */
-     protected $token;
+    protected $token;
     public function __construct($token)
     {
-       $this->token = $token;
+        $this->token = $token;
         //
     }
 
@@ -53,7 +53,7 @@ class CustomResetPasswordNotification extends Notification
      */
     public function toMail($notifiable)
     {
-      // dd($this);
+        // dd($this);
         return (new MailMessage)
               ->subject('Recuperar contraseña ')
               ->greeting('Cordial Saludo')
@@ -61,7 +61,7 @@ class CustomResetPasswordNotification extends Notification
               ->action('Recuperar contraseña', route('password.reset', $this->token))
               ->line('Si no realizó esta solicitud, no se requiere realizar ninguna otra acción.')
               ->salutation(' '. config('app.name'));
-              // ->trouble-clicking('Recuperar contraseña', route('password.reset', $this->token));
+        // ->trouble-clicking('Recuperar contraseña', route('password.reset', $this->token));
     }
 
     /**

@@ -25,16 +25,15 @@ class ImagenUnique implements Rule
      * @return bool
      */
     public function passes($attribute, $value)
-    { 
-        $nombreImagen = $value->getClientOriginalName();        
-        $imagen = Evento::where('imagen',$nombreImagen)->first();         
+    {
+        $nombreImagen = $value->getClientOriginalName();
+        $imagen = Evento::where('imagen', $nombreImagen)->first();
 
-        if (!is_null($imagen)) {           
-           return false;
-        }      
+        if (!is_null($imagen)) {
+            return false;
+        }
         return true;
-        
-    }   
+    }
 
     /**
      * Get the validation error message.

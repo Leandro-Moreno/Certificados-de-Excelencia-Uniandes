@@ -19,6 +19,6 @@ class Evento extends Model
 
     public function firma()
     {
-        return $this->belongsTo('App\Model\Eventos\firma','firma_id');
+        return $this->belongsTo('App\Model\Eventos\firma', 'firma_id');
     }
 }

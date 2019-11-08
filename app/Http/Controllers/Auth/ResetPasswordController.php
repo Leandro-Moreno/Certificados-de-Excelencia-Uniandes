@@ -42,8 +42,8 @@ class ResetPasswordController extends Controller
  * @param  string  $token
  * @return void
  */
-public function sendPasswordResetNotification($token)
-{
-    $this->notify(new CustomResetPasswordNotification($token));
-}
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new CustomResetPasswordNotification($token));
+    }
 }

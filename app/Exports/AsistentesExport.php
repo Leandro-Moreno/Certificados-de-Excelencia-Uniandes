@@ -8,8 +8,6 @@ use Maatwebsite\Excel\Concerns\FromView;
 
 class AsistentesExport implements FromView
 {
-
-
     public function __construct(int $evento)
     {
         $this->evento = $evento;
@@ -21,5 +19,4 @@ class AsistentesExport implements FromView
             'asistentes' => Asistente::where('evento_id', $this->evento)->get()
         ]);
     }
-
 }

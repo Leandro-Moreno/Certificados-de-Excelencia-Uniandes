@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top text-white">
+<nav class="navbar navbar-expand-lg bg-success navbar-absolute fixed-top text-white">
   <div class="container">
     <div class="navbar-wrapper">
       <a class="navbar-brand" href="{{ route('home') }}"><img width="120px" style="fill:white;" src='{{ asset('material') }}/img/logoUniandes.svg' /></a>

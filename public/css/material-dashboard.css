@@ -15359,38 +15359,39 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   background-color: #191919;
 }
 
-.sidebar .sidebar-wrapper {
+.sidebar-wrapper {
   position: relative;
-  height: calc(100vh - 75px);
+  height: calc(100vh);
   overflow: auto;
   width: 260px;
   z-index: 4;
+  background-color: #2d682f;
   padding-bottom: 30px;
 }
 
-.sidebar .sidebar-wrapper .dropdown .dropdown-backdrop {
+.sidebar-wrapper .dropdown .dropdown-backdrop {
   display: none !important;
 }
 
-.sidebar .sidebar-wrapper .navbar-form {
+.sidebar-wrapper .navbar-form {
   border: none;
   box-shadow: none;
 }
 
-.sidebar .sidebar-wrapper .navbar-form .input-group {
+.sidebar-wrapper .navbar-form .input-group {
   font-size: 1.7em;
   height: 36px;
   width: 78%;
   padding-left: 17px;
 }
 
-.sidebar .sidebar-wrapper > .nav [data-toggle=collapse] ~ div > ul > li > a span,
-.sidebar .sidebar-wrapper .user .user-info [data-toggle=collapse] ~ div > ul > li > a span {
+.sidebar-wrapper > .nav [data-toggle=collapse] ~ div > ul > li > a span,
+.sidebar-wrapper .user .user-info [data-toggle=collapse] ~ div > ul > li > a span {
   display: inline-block;
 }
 
-.sidebar .sidebar-wrapper > .nav [data-toggle=collapse] ~ div > ul > li > a .sidebar-normal,
-.sidebar .sidebar-wrapper .user .user-info [data-toggle=collapse] ~ div > ul > li > a .sidebar-normal {
+.sidebar-wrapper > .nav [data-toggle=collapse] ~ div > ul > li > a .sidebar-normal,
+.sidebar-wrapper .user .user-info [data-toggle=collapse] ~ div > ul > li > a .sidebar-normal {
   margin: 0;
   position: relative;
   transform: translateX(0px);
@@ -15399,8 +15400,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   display: block;
 }
 
-.sidebar .sidebar-wrapper > .nav [data-toggle=collapse] ~ div > ul > li > a .sidebar-mini,
-.sidebar .sidebar-wrapper .user .user-info [data-toggle=collapse] ~ div > ul > li > a .sidebar-mini {
+.sidebar-wrapper > .nav [data-toggle=collapse] ~ div > ul > li > a .sidebar-mini,
+.sidebar-wrapper .user .user-info [data-toggle=collapse] ~ div > ul > li > a .sidebar-mini {
   text-transform: uppercase;
   width: 30px;
   margin-right: 15px;
@@ -15411,8 +15412,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   display: inherit;
 }
 
-.sidebar .sidebar-wrapper > .nav [data-toggle=collapse] ~ div > ul > li > a i,
-.sidebar .sidebar-wrapper .user .user-info [data-toggle=collapse] ~ div > ul > li > a i {
+.sidebar-wrapper > .nav [data-toggle=collapse] ~ div > ul > li > a i,
+.sidebar-wrapper .user .user-info [data-toggle=collapse] ~ div > ul > li > a i {
   font-size: 17px;
   line-height: 20px;
   width: 26px;
@@ -15459,7 +15460,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 .sidebar .nav li .dropdown-menu a:focus,
 .sidebar .nav li.active > [data-toggle=collapse] {
   background-color: rgba(200, 200, 200, 0.2);
-  color: #3C4858;
+  color: #fff;
   box-shadow: none;
 }
 
@@ -15469,7 +15470,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 
 .sidebar .nav li.active > a,
 .sidebar .nav li.active > a i {
-  color: #fff;
+  color: #3C4858;
 }
 
 .sidebar .nav li.separator {
@@ -15513,7 +15514,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 .sidebar .nav li .dropdown-menu a {
   margin: 10px 15px 0;
   border-radius: 3px;
-  color: #3C4858;
+  color: #fff;
   padding-left: 10px;
   padding-right: 10px;
   text-transform: capitalize;
@@ -15550,6 +15551,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   display: block;
   position: relative;
   z-index: 4;
+  background-color: #2d682f;
 }
 
 .sidebar .logo:after {
@@ -15575,7 +15577,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   padding: 5px 0px;
   display: inline-block;
   font-size: 18px;
-  color: #3C4858;
+  color: #fff;
   white-space: nowrap;
   font-weight: 400;
   line-height: 30px;
@@ -15634,8 +15636,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   color: #fff;
 }
 
-.sidebar[data-color=purple] li.active > a {
-  background-color: #4caf50;
+.sidebar[data-color=purple] li.active > p {
+  color: #4caf50;
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(76, 175, 80, 0.4);
 }
 
@@ -15650,8 +15652,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .sidebar[data-color=orange] li.active > a {
-  background-color: #9c27b0;
-  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+  background-color: #fff;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 255, 255, 0.4);
 }
 
 .sidebar[data-color=danger] li.active > a {
@@ -17184,8 +17186,8 @@ label {
 /*           Animations              */
 
 .animation-transition-general,
-.sidebar .sidebar-wrapper > .nav [data-toggle=collapse] ~ div > ul > li > a span,
-.sidebar .sidebar-wrapper .user .user-info [data-toggle=collapse] ~ div > ul > li > a span,
+.sidebar-wrapper > .nav [data-toggle=collapse] ~ div > ul > li > a span,
+.sidebar-wrapper .user .user-info [data-toggle=collapse] ~ div > ul > li > a span,
 .sidebar .nav p {
   transition: all 300ms linear;
 }

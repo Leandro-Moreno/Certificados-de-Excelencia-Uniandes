@@ -30,12 +30,13 @@
         background-color: #191919;
     }
 
-    .sidebar-wrapper{
+    &-wrapper{
         position: relative;
-        height: calc(100vh - 75px);
+        height: calc(100vh);
         overflow: auto;
         width: 260px;
         z-index: 4;
+        background-color: darken($brand-primary, 20%);
 
         padding-bottom: 30px;
 
@@ -136,7 +137,7 @@
             & .dropdown-menu a:focus,
             &.active > [data-toggle="collapse"]{
                 background-color: rgba(200, 200, 200, 0.2);
-                color: $black-color;
+                color: $white-color;
                 box-shadow: none;
             }
 
@@ -148,7 +149,7 @@
 
             &.active > a,
             &.active > a i{
-                color: $white-color;
+                color: $black-color;
             }
 
             &.separator{
@@ -195,7 +196,7 @@
     .nav li .dropdown-menu a{
           margin: 10px 15px 0;
           border-radius: $border-radius-base;
-          color: $black-color;
+          color: $white-color;
           padding-left: 10px;
           padding-right: 10px;
           text-transform: capitalize;
@@ -233,7 +234,7 @@
         display: block;
         position: relative;
         z-index: 4;
-
+        background-color: darken($brand-primary, 20%);
         &:after{
             content: '';
             position: absolute;
@@ -258,7 +259,7 @@
             padding: $padding-small-vertical $padding-zero;
             display: inline-block;
             font-size: 18px;
-            color: $black-color;
+            color: $white-color;
             white-space: nowrap;
             font-weight: $font-weight-default;
             line-height: 30px;
@@ -293,7 +294,7 @@
     }
 
     &[data-color="purple"]{
-        @include set-background-color-button($brand-primary);
+        @include set-color-button($brand-primary);
     }
     &[data-color="azure"]{
         @include set-background-color-button($brand-info);
@@ -302,7 +303,8 @@
         @include set-background-color-button($brand-success);
     }
     &[data-color="orange"]{
-        @include set-background-color-button($brand-warning);
+      @include set-background-color-button($white-color);
+
     }
     &[data-color="danger"]{
         @include set-background-color-button($brand-danger);

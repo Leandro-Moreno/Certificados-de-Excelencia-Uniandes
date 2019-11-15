@@ -10,7 +10,7 @@
         <div class="card card-login card-hidden mb-3">
           <div class="card-header card-header-primary text-center">
             <h4 class="card-title"><strong>{{ __('Iniciar sesión') }}</strong></h4>
-         
+
           </div>
           <div class="card-body">
             <p class="card-description text-center">{{ __('O inicie sesión su cuenta ') }} <strong>je.peralta@uniandes.edu.co</strong> {{ __(' Uniandes  ') }}<strong></strong> </p>
@@ -54,7 +54,7 @@
             </div>
           </div>
           <div class="card-footer justify-content-center">
-            <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('Ingresar') }}</button>
+            <button type="submit" class="btn btn-outline-primary btn-lg">{{ __('Ingresar') }}</button>
           </div>
         </div>
       </form>

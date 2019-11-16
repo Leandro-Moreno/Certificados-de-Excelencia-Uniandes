@@ -32,33 +32,37 @@
             <p>{{ __('firmas') }}</p>
         </a>
       </li>
-      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
-        <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="false">
-            <i class="material-icons">supervisor_account</i>
+
+      <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('user.index') }}">
+          <i class="material-icons">supervisor_account</i>
+            <p>{{ __('Administrar usuarios') }}</p>
+        </a>
+      </li>
+
+      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'correo') ? ' active' : '' }}">
+        <a class="nav-link" data-toggle="collapse" href="#Configuracion" aria-expanded="{{ ($activePage == 'profile' || $activePage == 'correo') ? 'true' : 'false' }}">
+            <i class="material-icons">settings_applications</i>
           <p>{{ __('Configuración') }}
             <b class="caret"></b>
           </p>
         </a>
-        <div class="collapse" id="laravelExample">
+        <div class="collapse {{ ($activePage == 'profile' || $activePage == 'correo') ? ' show' : '' }}" id="Configuracion">
           <ul class="nav">
             <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('profile.edit') }}">
-                <span class="sidebar-mini"> P </span>
-                <span class="sidebar-normal">{{ __('Perfil') }} </span>
+                <i class="material-icons">person</i>
+                <p> {{ __('Perfil') }} </p>
               </a>
             </li>
-            <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('user.index') }}">
-                <span class="sidebar-mini"> AU </span>
-                <span class="sidebar-normal"> {{ __('Administrar usuario') }} </span>
-              </a>
-            </li>
+
             <li class="nav-item{{ $activePage == 'correo' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('correo') }}">
-                <span class="sidebar-mini"> N </span>
-                <span class="sidebar-normal"> {{ __('Notificaciones') }} </span>
+                <i class="material-icons">email</i>
+                <p> {{ __('Configuración de Correo') }} </p>
               </a>
             </li>
+
           </ul>
         </div>
       </li>
@@ -72,7 +76,13 @@
         </a>
       </li>
       @endif
+      <li class="nav-item d-xl-none">
+        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
 
+          <i class="material-icons">close</i>
+          <p> {{ __('Cerrar sesión') }}</p>
+        </a>
+      </li>
     </ul>
   </div>
 </div>

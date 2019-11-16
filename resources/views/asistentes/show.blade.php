@@ -139,21 +139,21 @@
 
                 </div>
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table table-striped w-auto">
                     <thead class=" text-primary">
-                      <th>
+                      <th scope="col">
                           {{ __('Nombre') }}
                       </th>
-                      <th>
+                      <th scope="col">
                           {{ __('Apellido') }}
                       </th>
-                      <th>
+                      <th scope="col">
                           {{ __('Correo') }}
                       </th>
-                      <th>
+                      <th scope="col">
                           {{ __('Documento') }}
                       </th>
-                      <th class="text-right">
+                      <th scope="col" class="text-right">
                         {{ __('Asistentes') }}
                       </th>
                     </thead>

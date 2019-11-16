@@ -32,16 +32,16 @@
                   <table class="table">
                     <thead class=" text-primary">
                       <th>
-                          {{ __('Name') }}
+                          {{ __('Nombre') }}
                       </th>
                       <th>
                         {{ __('Email') }}
                       </th>
                       <th>
-                        {{ __('Creation date') }}
+                        {{ __('Fecha de Creación') }}
                       </th>
                       <th class="text-right">
-                        {{ __('Actions') }}
+                        {{ __('Acciones') }}
                       </th>
                     </thead>
                     <tbody>

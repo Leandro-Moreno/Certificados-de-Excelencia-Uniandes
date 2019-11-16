@@ -31,6 +31,7 @@ class UsuarioNuevo extends Notification
      */
     public function via($notifiable)
     {
+      // dd("hola");
         return ['mail'];
     }
 
@@ -42,7 +43,9 @@ class UsuarioNuevo extends Notification
      */
     public function toMail($notifiable)
     {
+
         $correo = Correo::first();
+        // dd($correo);
         config(['mail.host' => $correo->host]);
         config(['mail.driver' => $correo->driver]);
         config(['mail.port' => $correo->port]);

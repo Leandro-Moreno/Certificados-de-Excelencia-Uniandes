@@ -49,12 +49,31 @@
         <div class="col-lg-3 col-md-6 col-sm-6">
           <a class="nav-link" href="{{ route('asistentes') }}">
           <div class="card card-stats">
-            <div class="card-header card-header-success card-header-icon">
+            <div class="card-header card-header-danger   card-header-icon">
               <div class="card-icon">
                 <i class="material-icons">how_to_reg</i>
               </div>
               <p class="card-category">{{ __('Administrar') }}</p>
               <h4 class="card-title">{{ __('Asistencia') }}
+              </h4>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+
+              </div>
+            </div>
+          </div>
+        </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <a class="nav-link" href="{{ route('firmas') }}">
+          <div class="card card-stats">
+            <div class="card-header card-header-success card-header-icon">
+              <div class="card-icon">
+                <i class="material-icons">create</i>
+              </div>
+              <p class="card-category">{{ __('Administrar') }}</p>
+              <h4 class="card-title">{{ __('Firmas') }}
               </h4>
             </div>
             <div class="card-footer">

@@ -49366,8 +49366,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\certificados\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\certificados\resources\sass\material-dashboard.scss */"./resources/sass/material-dashboard.scss");
+__webpack_require__(/*! C:\laragon\www\certificados\certificados\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\certificados\certificados\resources\sass\material-dashboard.scss */"./resources/sass/material-dashboard.scss");
 
 
 /***/ })

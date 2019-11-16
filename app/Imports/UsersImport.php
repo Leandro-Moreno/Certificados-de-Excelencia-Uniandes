@@ -48,7 +48,7 @@ class UsersImport implements ToModel, WithHeadingRow
     {
         return [
 
-            '*.correo_electronico' => [ 'required', 'email'],
+            '*.correo_electronico' => ['required', 'email'],
 
             /*
             '*.0' => [ 'required', 'email', function($attribute, $value, $onFailure) {

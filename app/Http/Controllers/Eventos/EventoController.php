@@ -75,11 +75,11 @@ class EventoController extends Controller
     public function update(Request $request, Evento $evento)
     {
         $evento->nombre = $request->nombre;
-        $evento->estado  = $request->estado;
-        $evento->descripcion  = $request->descripcion;
-        $evento->firma_id  = $request->firma;
-        $evento->fecha  = $request->fecha;
-        $evento->hora  = $request->hora;
+        $evento->estado = $request->estado;
+        $evento->descripcion = $request->descripcion;
+        $evento->firma_id = $request->firma;
+        $evento->fecha = $request->fecha;
+        $evento->hora = $request->hora;
         $evento->save();
         return redirect()->route('eventos')->withStatus(__('Evento actualizado con éxito.'));
     }

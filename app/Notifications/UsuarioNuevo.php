@@ -31,7 +31,7 @@ class UsuarioNuevo extends Notification
      */
     public function via($notifiable)
     {
-      // dd("hola");
+        // dd("hola");
         return ['mail'];
     }
 

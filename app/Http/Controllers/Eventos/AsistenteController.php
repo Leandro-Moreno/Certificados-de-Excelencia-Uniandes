@@ -33,7 +33,7 @@ class AsistenteController extends Controller
      */
     public function create(Evento $eventos)
     {
-        return view('asistentes.create', ['eventos' => $eventos->all() ]);
+        return view('asistentes.create', ['eventos' => $eventos->all()]);
     }
 
     /**
@@ -52,7 +52,7 @@ class AsistenteController extends Controller
         Excel::import(new UsersImport, $request->asistentes);
         $asistentes = (new UsersImport)->toArray($request->asistentes);
 
-        for ($i=0; $i < count($asistentes[0]); $i++) {
+        for ($i = 0; $i < count($asistentes[0]); $i++) {
             $email = $asistentes[0][$i]['correo_electronico'];
 
             $user = User::where('email', $email)->first();
@@ -111,8 +111,8 @@ class AsistenteController extends Controller
     public function addAsistente($id, Request $request)
     {
         $this->Validate($request, [
-          'email' => 'required|'
-       ]);
+            'email' => 'required|'
+        ]);
         $usuario = new User;
         $usuario->name              = $request->name;
         $usuario->name2             = $request->name2;
@@ -188,7 +188,7 @@ class AsistenteController extends Controller
             'documento' => 'CA',
         ]);
         } else {
-            return response()->json(['respuesta' => 0 ]);
+            return response()->json(['respuesta' => 0]);
         }
     }
 

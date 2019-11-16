@@ -32,7 +32,7 @@ class CorreoController extends Controller
         $correo->port = $request->port;
         $correo->encryption = $request->encryption;
         $correo->username = $request->username;
-        $correo->password  = $request->password ;
+        $correo->password = $request->password;
         $correo->address = $request->address;
         $correo->name = $request->name;
         $correo->save();

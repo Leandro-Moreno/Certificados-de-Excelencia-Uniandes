@@ -13,6 +13,6 @@ class Firma extends Model
      * @var array
      */
     protected $fillable = [
-          'nombre', 'area', 'cargo', 'imagen'
-      ];
+            'nombre', 'area', 'cargo', 'imagen'
+        ];
 }

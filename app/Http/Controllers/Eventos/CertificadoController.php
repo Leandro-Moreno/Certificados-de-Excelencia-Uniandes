@@ -43,8 +43,8 @@ class CertificadoController extends Controller
             'referencia' => 'required',
             'documento' => 'required'
             ]);
-        $referencia=$request->referencia;
-        if (strlen($referencia)==8) {
+        $referencia = $request->referencia;
+        if (strlen($referencia) == 8) {
             $referencia = substr($referencia, 2);
             $referencia = (int)$referencia;
             $certificado = Asistente::where('asistencia', $referencia)->first();

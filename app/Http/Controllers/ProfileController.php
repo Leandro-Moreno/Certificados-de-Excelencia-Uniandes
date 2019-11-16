@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 /**
  * ProfileController Class Doc Comment
  *
- * @category Class
+ * @category Controllers
  * @package  ProfileController
  * @author   JorgePeralta
  * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Hash;
 class ProfileController extends Controller
 {
     /**
-     * Show the form for editing the profile.
+     * Muestra el formulario para editar el perfil.
      *
      * @return \Illuminate\View\View
      */
@@ -28,7 +28,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * Update the profile
+     * Actualiza el perfil
      *
      * @param  \App\Http\Requests\ProfileRequest  $request
      * @return \Illuminate\Http\RedirectResponse
@@ -41,7 +41,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * Change the password
+     * Cambia la contraseña
      *
      * @param  \App\Http\Requests\PasswordRequest  $request
      * @return \Illuminate\Http\RedirectResponse

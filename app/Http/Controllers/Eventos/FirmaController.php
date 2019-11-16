@@ -8,34 +8,47 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
+/**
+ * FirmaController Class Doc Comment
+ *
+ * @category Controllers
+ * @package  FirmaController
+ * @author   JorgePeralta
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://www.dsit.uniandes.edu.co/
+ *
+ */
 class FirmaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+     /**
+      * Muestra todas las firmas.
+      *
+      * @param  \App\Model\Eventos\Firma  $model
+      * @return \Illuminate\View\firmas\index
+      */
     public function index(Firma $model)
     {
         return view('firmas.index', ['datos' => $model->paginate(15)]);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Muestra el formulario para crear firmas.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\firmas\create
      */
     public function create()
     {
         return view('firmas.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
+     /**
+      * Almacena las firmas
+      *
+      * @param  \Illuminate\Http\Request  $request
+      * @param  \App\Model\Eventos\Firma  $model
+      * @return mixed
+      */
     public function store(Request $request, Firma $model)
     {
         $nombreImagen = $request->file('imagen')->getClientOriginalName();
@@ -56,10 +69,10 @@ class FirmaController extends Controller
 
 
     /**
-     * Show the form for editing the specified resource.
+     * Muestra el formulario para editar las firmas.
      *
      * @param  \App\Model\Eventos\Firma  $firma
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\firmas\edit
      */
     public function edit(Firma $firma)
     {
@@ -67,7 +80,7 @@ class FirmaController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza la firma en el almacenamiento.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Model\Eventos\Firma  $firma
@@ -91,7 +104,7 @@ class FirmaController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Elimina la firma.
      *
      * @param  \App\Model\Eventos\Firma  $firma
      * @return \Illuminate\Http\Response

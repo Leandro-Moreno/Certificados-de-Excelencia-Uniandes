@@ -55,12 +55,12 @@ class CustomResetPasswordNotification extends Notification
     {
         // dd($this);
         return (new MailMessage)
-              ->subject('Recuperar contraseña ')
-              ->greeting('Cordial Saludo')
-              ->line('Está recibiendo este correo porque hizó una solicitud de recuperación de contraseña para su cuenta.')
-              ->action('Recuperar contraseña', route('password.reset', $this->token))
-              ->line('Si no realizó esta solicitud, no se requiere realizar ninguna otra acción.')
-              ->salutation(' '. config('app.name'));
+                ->subject('Recuperar contraseña ')
+                ->greeting('Cordial Saludo')
+                ->line('Está recibiendo este correo porque hizó una solicitud de recuperación de contraseña para su cuenta.')
+                ->action('Recuperar contraseña', route('password.reset', $this->token))
+                ->line('Si no realizó esta solicitud, no se requiere realizar ninguna otra acción.')
+                ->salutation(' '. config('app.name'));
         // ->trouble-clicking('Recuperar contraseña', route('password.reset', $this->token));
     }
 

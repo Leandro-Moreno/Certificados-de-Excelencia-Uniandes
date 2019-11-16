@@ -13,36 +13,36 @@ use App\Http\Controllers\Controller;
 class CertificadoController extends Controller
 {
     /**
-      * Display a listing of the resource.
-      *
-      * @return \Illuminate\Http\Response
-      */
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index(Evento $model)
     {
         return view('certificados.index', ['datos' => $model->paginate(15)]);
     }
 
     /**
-      * Display a listing of the resource.
-      *
-      * @return \Illuminate\Http\Response
-      */
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function publico()
     {
         return view('certificados.publico');
     }
 
     /**
-      * Display a listing of the resource.
-      *
-      * @return \Illuminate\Http\Response
-      */
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function validar(Request $request)
     {
         $this->Validate($request, [
             'referencia' => 'required',
             'documento' => 'required'
-          ]);
+            ]);
         $referencia=$request->referencia;
         if (strlen($referencia)==8) {
             $referencia = substr($referencia, 2);
@@ -93,9 +93,9 @@ class CertificadoController extends Controller
                 $pdf = PDF::loadView(
                     'certificados.pdf',
                     ['asistencia' =>
-                  $asistencia]
+                    $asistencia]
                 )
-                  ->setPaper('letter', 'landscape');
+                    ->setPaper('letter', 'landscape');
                 return $pdf->stream('certificado.pdf');
             }
 

@@ -20,12 +20,12 @@ use Illuminate\Support\Facades\Storage;
  */
 class FirmaController extends Controller
 {
-     /**
-      * Muestra todas las firmas.
-      *
-      * @param  \App\Model\Eventos\Firma  $model
-      * @return \Illuminate\View\firmas\index
-      */
+        /**
+         * Muestra todas las firmas.
+         *
+         * @param  \App\Model\Eventos\Firma  $model
+         * @return \Illuminate\View\firmas\index
+         */
     public function index(Firma $model)
     {
         return view('firmas.index', ['datos' => $model->paginate(15)]);
@@ -42,13 +42,13 @@ class FirmaController extends Controller
     }
 
 
-     /**
-      * Almacena las firmas
-      *
-      * @param  \Illuminate\Http\Request  $request
-      * @param  \App\Model\Eventos\Firma  $model
-      * @return mixed
-      */
+        /**
+         * Almacena las firmas
+         *
+         * @param  \Illuminate\Http\Request  $request
+         * @param  \App\Model\Eventos\Firma  $model
+         * @return mixed
+         */
     public function store(Request $request, Firma $model)
     {
         $nombreImagen = $request->file('imagen')->getClientOriginalName();
@@ -89,13 +89,13 @@ class FirmaController extends Controller
     public function update(Request $request, Firma $firma)
     {
         $firma->nombre = $request->nombre;
-        $firma->area  = $request->area;
+        $firma->area = $request->area;
         $firma->cargo  = $request->cargo;
 
         if ($request->imagen) {
             $nombreImagen = $request->file('imagen')->getClientOriginalName();
             $nombreImagen = \Str::random(3).$nombreImagen;
-            $firma->imagen  = $nombreImagen;
+            $firma->imagen = $nombreImagen;
             Storage::putFileAs('public/firmas', new File($request->imagen), $nombreImagen);
         }
 

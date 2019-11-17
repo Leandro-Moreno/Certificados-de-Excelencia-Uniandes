@@ -23,6 +23,7 @@ jobs:
 
       - run: sudo apt update && sudo apt install zlib1g-dev libsqlite3-dev php7.3-gd
       - run: sudo docker-php-ext-install zip
+      - run: sudo docker-php-ext-install -j$(nproc) gd
 
       # Download and cache dependencies
 

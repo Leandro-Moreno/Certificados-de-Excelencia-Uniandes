@@ -1,4 +1,4 @@
-<p align="center"><img src="./public/material/img/Logo_SVE.svg"></p>
+<p align="center"><img src="./public/excelencia/cabezote.jpg"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>

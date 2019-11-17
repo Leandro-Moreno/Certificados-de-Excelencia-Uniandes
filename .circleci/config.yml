@@ -63,7 +63,6 @@ jobs:
           command: |
             cp .env.travis .env
             php artisan key:generate
-            php artisan passport:keys
             touch ./storage/logs/laravel.log
 
       - restore_cache:

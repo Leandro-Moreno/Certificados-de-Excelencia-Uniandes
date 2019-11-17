@@ -105,23 +105,10 @@ jobs:
           command: php artisan serve
           background: true
 
-      - run:
-          name: Run Laravel Dusk Tests
-          command: php artisan dusk
-          environment:
-            APP_URL: http://localhost:8000
-
       - store_artifacts:
           path: ./logs/phpunit
           destination: phpunit
 
-      - store_artifacts:
-          path: ./tests/Browser/console
-          destination: console
-
-      - store_artifacts:
-          path: ./tests/Browser/screenshots
-          destination: screenshots
 
       - store_artifacts:
           path: ./storage/logs

@@ -61,7 +61,7 @@ jobs:
       - run:
           name: Setup Environment
           command: |
-            cp .env.testing .env
+            cp .env.travis .env
             php artisan key:generate
             php artisan passport:keys
             touch ./storage/logs/laravel.log

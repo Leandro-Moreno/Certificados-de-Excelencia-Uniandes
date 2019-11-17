@@ -88,26 +88,6 @@ jobs:
          name: Migrate Database
          command: php artisan migrate --force
       - run:
-          name: PHPLOC
-          command: |
-            mkdir -p ./logs/phploc
-            vendor/bin/phploc app --no-interaction --log-xml=logs/phploc/junit.xml
-      - run:
-          name: PHPCS
-          command: |
-            mkdir -p ./logs/phpcs
-            vendor/bin/phpcs --standard="PSR1,PSR2" -v --report=junit --report-file=logs/phpcs/junit.xml app/
-      - run:
-          name: PHP Mess Detector
-          command: |
-            mkdir -p ./logs/phpmd
-            vendor/bin/phpmd app text phpmd-ruleset.xml > logs/phpmd/phpmd.log
-      - run:
-          name: ESLint
-          command: |
-            mkdir -p ./logs/eslint
-            node_modules/eslint/bin/eslint.js --ext .vue -o logs/eslint/junit.xml -f junit resources/assets/js
-      - run:
           name: Run Unit Tests
           environment:
             DB_CONNECTION: sqlite-memory
@@ -130,22 +110,6 @@ jobs:
           command: php artisan dusk
           environment:
             APP_URL: http://localhost:8000
-
-      - store_artifacts:
-          path: ./logs/phploc
-          destination: phploc
-
-      - store_artifacts:
-          path: ./logs/phpcs
-          destination: phpcs
-
-      - store_artifacts:
-          path: ./logs/phpmd
-          destination: phpmd
-
-      - store_artifacts:
-          path: ./logs/eslint
-          destination: eslint
 
       - store_artifacts:
           path: ./logs/phpunit

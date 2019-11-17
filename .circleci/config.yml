@@ -22,7 +22,7 @@ jobs:
       - checkout
 
       - run: sudo apt update && sudo apt install zlib1g-dev libsqlite3-dev
-      - run: sudo docker-php-ext-configure gd --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir && sudo docker-php-ext-install gd && sudo docker-php-ext-install amqp zip && sudo docker-php-ext install libjpeg-turbo8-dev
+      - run: sudo docker-php-ext install libjpeg-turbo8-dev && sudo docker-php-ext-configure gd --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir && sudo docker-php-ext-install gd && sudo docker-php-ext-install amqp zip
 
       # Download and cache dependencies
 

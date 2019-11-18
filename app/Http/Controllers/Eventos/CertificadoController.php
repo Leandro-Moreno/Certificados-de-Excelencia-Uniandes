@@ -10,6 +10,9 @@ use App\Model\Eventos\Evento;
 use App\Model\Eventos\Asistente;
 use App\Http\Controllers\Controller;
 
+use Carbon\Carbon;
+use Jenssegers\Date\Date;
+
 class CertificadoController extends Controller
 {
     /**
@@ -63,9 +66,12 @@ class CertificadoController extends Controller
 
     public function pdf($evento, $user)
     {
+        Date::setLocale('es');
         $usuario = User::find($user);
         $evento  = Evento::find($evento);
         $asistencia = Asistente::where('user_id', $user)->where('evento_id', $evento->id)->first();
+        $fecha  = Date::createFromFormat('Y-m-d', $evento->fecha, 'America/Bogota');
+        $resultado = $fecha->format('j \d\e F \d\e Y');
 
         if (!$usuario) {
             return redirect()->route('certificados')->with('error', '!Usuario no existe!');
@@ -82,8 +88,8 @@ class CertificadoController extends Controller
         if (Auth::user()->rol_id <= 2) {
             $pdf = PDF::loadView(
                 'certificados.pdf',
-                ['asistencia' =>
-            $asistencia]
+                ['asistencia' => $asistencia,
+              'fechaEvento'=> $resultado]
             )
             ->setPaper('letter', 'landscape');
             return $pdf->stream('certificado.pdf');

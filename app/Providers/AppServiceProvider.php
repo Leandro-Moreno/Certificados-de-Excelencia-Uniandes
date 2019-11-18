@@ -26,5 +26,6 @@ class AppServiceProvider extends ServiceProvider
     {
         /* Solución a la migración del –users_email_unique(email)-- */
         Schema::defaultStringLength(191);
+        // \Carbon::setLocale(config('app.locale'));
     }
 }

@@ -32,7 +32,7 @@
                   <table class="table">
                     <thead class=" text-primary">
                       <th>
-                          {{ __('Nombre') }}
+                          {{ __('Nombre') }} {{ __('Apellido') }}
                       </th>
                       <th>
                         {{ __('Email') }}

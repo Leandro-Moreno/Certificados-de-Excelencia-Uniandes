@@ -10,6 +10,9 @@ use App\Model\Eventos\Evento;
 use App\Model\Eventos\Asistente;
 use App\Http\Controllers\Controller;
 
+use Carbon\Carbon;
+
+
 class CertificadoController extends Controller
 {
     /**
@@ -66,7 +69,9 @@ class CertificadoController extends Controller
         $usuario = User::find($user);
         $evento  = Evento::find($evento);
         $asistencia = Asistente::where('user_id', $user)->where('evento_id', $evento->id)->first();
-
+        $fecha  = Carbon::createFromFormat('Y-m-d', $evento->fecha, 'America/Bogota');
+        // dd($fecha->format('jS \\of F Y h:i:s A'));
+        $date = Carbon::now();
         if (!$usuario) {
             return redirect()->route('certificados')->with('error', '!Usuario no existe!');
         }

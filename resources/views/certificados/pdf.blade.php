@@ -395,12 +395,19 @@ body {
 	left: 320.155px;
 	top: 6.166px;
 }
+.imagenFirma{
+	position: absolute;
+	width:auto;
+	height: 50px;
+	left: 170.797px;
+	top: 535.105px;
+}
 </style>
 </head>
 <body>
 <div id="certificados_dax">
 <div id="_Departamento__Direcci_n_de_Ed">
-	<span>«Departamento»<br/>Dirección de Educación Continua</span>
+	<span>{{$asistencia->eventos->firma->area}}<br/>Dirección de Educación Continua</span>
 </div>
 <div id="Nombre_Participante">
 	<span>{{$asistencia->usuarios->name}}</span>
@@ -435,19 +442,18 @@ body {
 	</path>
 </svg>
 <div id="Director_departamento">
-	<span>«Nombre Director Dpto.»</span>
+	<span>{{$asistencia->eventos->firma->nombre}}</span>
 </div>
 <div id="Director_">
-	<span style="">Director</span><span style=""><br/></span>
+	<span style="">{{$asistencia->eventos->firma->cargo}}</span><span style=""><br/></span>
 </div>
 <div id="_Departamento__">
-	<span style="">«</span><span style="">Departamento</span><span style="">»<br/></span>
+	<span style="">{{$asistencia->eventos->firma->area}}</span>
 </div>
 <div id="Diana_Betancourt_Galindo_Direc">
 	<span style="">Diana Betancourt Galindo<br/></span><span id="diana-info" style="font-style:normal;font-weight:normal;font-size:12.726670265197754px;">Directora<br/>Dirección de Educación Continua</span>
 </div>
 <div id="Universidad_de_los_Andes___Vig">
-
 	<span>Universidad de los Andes | Vigilada Mineducación. <br/>Reconocimiento como Universidad: Decreto 1297 del 30 de mayo de 1964.<br/>Reconocimiento personería jurídica: Resolución 28 del 23 de febrero de 1949 Minjusticia.</span>
 </div>
 <div id="La_autenticidad_de_este_docume">
@@ -459,7 +465,7 @@ body {
 <div id="_CONSECUTIVO_">
 	<span>VI{{str_pad($asistencia->asistencia, 6, '0', STR_PAD_LEFT)}}</span>
 </div>
-
+<img class="imagenFirma" src="{{asset($imagen) }}" />
  <img class="logoUniandes"  src="{{ asset('material/img/logoUniandes.png') }}"/>
 </div>
 </body>

@@ -423,7 +423,7 @@ body {
 </div>
 <div id="Grupo_1">
 	<div id="fecha">
-		<span>Realizado el {{$asistencia->eventos->fecha}}, con una duración de {{$asistencia->eventos->hora}} horas.</span>
+		<span>Realizado el {{$fechaEvento}}, con una duración de {{$asistencia->eventos->hora}} horas.</span>
 	</div>
 </div>
 <svg class="L_nea_1">
@@ -447,7 +447,7 @@ body {
 	<span style="">Diana Betancourt Galindo<br/></span><span id="diana-info" style="font-style:normal;font-weight:normal;font-size:12.726670265197754px;">Directora<br/>Dirección de Educación Continua</span>
 </div>
 <div id="Universidad_de_los_Andes___Vig">
-	{{$asistencia}}
+
 	<span>Universidad de los Andes | Vigilada Mineducación. <br/>Reconocimiento como Universidad: Decreto 1297 del 30 de mayo de 1964.<br/>Reconocimiento personería jurídica: Resolución 28 del 23 de febrero de 1949 Minjusticia.</span>
 </div>
 <div id="La_autenticidad_de_este_docume">

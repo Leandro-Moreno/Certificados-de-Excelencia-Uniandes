@@ -83,7 +83,7 @@
                   <tr>
                     <th scope="row">{{$loop->iteration}}</th>
                     <td>{{$asistentes->name}} {{$asistentes->apellido}}</td>
-                    <td class="td-actions text-right"><a rel="tooltip" class="" href="{{ route('asistentes.edit', $asistentes) }}" data-original-title="" title="">
+                    <td class="td-actions text-right"><a rel="tooltip" class="" href="{{ route('user.edit', $asistentes) }}" data-original-title="" title="">
                       <i class="material-icons">edit</i>
                       <div class="ripple-container"></div>
                     </a></td>

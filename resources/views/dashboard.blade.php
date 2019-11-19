@@ -117,8 +117,8 @@
                   @foreach($firmas as $firma)
                   <tr>
                     <th scope="row">{{$loop->iteration}}</th>
-                    <td>{{$evento->firma->nombre}}</td>
-                    <td class="td-actions text-right"><a rel="tooltip" class="" href="{{ route('eventos.edit', $evento) }}" data-original-title="" title="">
+                    <td>{{$firma->nombre}}</td>
+                    <td class="td-actions text-right"><a rel="tooltip" class="" href="{{ route('firmas.edit', $firma) }}" data-original-title="" title="">
                       <i class="material-icons">edit</i>
                       <div class="ripple-container"></div>
                     </a></td>

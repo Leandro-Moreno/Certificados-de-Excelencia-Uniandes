@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row">
         @if (Auth::user()->rol_id == 3)
-        <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="col-lg-4 col-md-6 col-sm-6">
           <a class="nav-link" href="{{ route('certificados') }}">
           <div class="card card-stats">
             <div class="card-header card-header-primary card-header-icon">
@@ -27,7 +27,8 @@
         @endif
 
         @if (Auth::user()->rol_id <= 2)
-        <div class="col-lg-3 col-md-6 col-sm-6">
+        @if($eventos->count() > 0)
+        <div class="col-lg-4 col-md-6 col-sm-6">
           <a class="nav-link" href="{{ route('eventos') }}">
           <div class="card card-stats">
             <div class="card-header card-header-primary card-header-icon">
@@ -62,7 +63,8 @@
           </div>
           </a>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
+        @endif
+        <div class="col-lg-4 col-md-6 col-sm-6">
           <a class="nav-link" href="{{ route('asistentes') }}">
           <div class="card card-stats">
             <div class="card-header card-header-danger   card-header-icon">
@@ -97,7 +99,7 @@
           </div>
         </a>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="col-lg-4 col-md-6 col-sm-6">
           <a class="nav-link" href="{{ route('firmas') }}">
           <div class="card card-stats">
             <div class="card-header card-header-success card-header-icon">

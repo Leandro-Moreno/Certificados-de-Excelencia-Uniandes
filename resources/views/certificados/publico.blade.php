@@ -12,7 +12,6 @@
             <h4 class="card-title"><strong>{{ __('Validar certificado') }}</strong></h4>
 
           </div>
-
           <div class="card-body">
             @if (session('status'))
               <div class="row">
@@ -38,7 +37,6 @@
                 </div>
               </div>
             @endif
-          <div class="card-body">
             <p class="card-description text-center">{{ __('Digite el número de Certificado y el Documento de Identificación') }}</p>
             <div class="bmd-form-group{{ $errors->has('referencia') ? ' has-danger' : '' }}">
               <div class="input-group">

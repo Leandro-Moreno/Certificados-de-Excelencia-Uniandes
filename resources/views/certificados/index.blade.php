@@ -57,16 +57,16 @@
                       @foreach($datos as $dato)
                         <tr>
                           <td>
-                            {{ $dato->nombre }}
+                            {{ $dato->eventos->nombre }}
                           </td>
                           <td>
-                            {{ $dato->fecha }}
+                            {{ $dato->eventos->fecha }}
                           </td>
                           <td>
-                            {{ $dato->hora }} Horas
+                            {{ $dato->eventos->hora }} Horas
                           </td>
                           <td class="td-actions text-right">
-                            <a rel="tooltip" class="btn btn-success btn-link" href="{{ url('certificados/'.$dato->id.'/'.Auth::user()->id) }}" data-original-title="" title="">
+                            <a rel="tooltip" class="btn btn-success btn-link" href="{{ url('certificados/'.$dato->evento_id.'/'.Auth::user()->id) }}" data-original-title="" title="">
                               <i class="material-icons">cloud_download</i> DESCARGAR
                               <div class="ripple-container"></div>
                             </a>

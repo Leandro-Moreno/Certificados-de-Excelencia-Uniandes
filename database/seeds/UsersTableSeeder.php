@@ -33,7 +33,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'rol_id' => '3',
+            'rol_id' => '1',
             'name' => 'Laura',
             'name2' => 'Camila',
             'apellido' => 'Reyes',
@@ -46,7 +46,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'rol_id' => '3',
+            'rol_id' => '1',
             'name' => 'Paula',
             'name2' => 'Alejandra',
             'apellido' => 'Gonzalez',
@@ -58,7 +58,7 @@ class UsersTableSeeder extends Seeder
             'updated_at' => now()
         ]);
         DB::table('users')->insert([
-            'rol_id' => '3',
+            'rol_id' => '1',
             'name' => 'Diego',
             'name2' => 'Andres',
             'apellido' => 'Páez',
@@ -71,7 +71,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'rol_id' => '3',
+            'rol_id' => '1',
             'name' => 'Paola',
             'name2' => 'Alejandra',
             'apellido' => 'Estrella',

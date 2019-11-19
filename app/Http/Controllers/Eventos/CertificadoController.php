@@ -18,9 +18,10 @@ class CertificadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Evento $model)
+    public function index(Asistente $asistente)
     {
-        return view('certificados.index', ['datos' => $model->paginate(15)]);
+
+        return view('certificados.index', ['datos' => $asistente->where('user_id',Auth::id())->get()]);
     }
 
     /**

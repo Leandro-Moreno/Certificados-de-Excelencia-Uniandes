@@ -10,9 +10,6 @@ use App\Model\Eventos\Evento;
 use App\Model\Eventos\Asistente;
 use App\Http\Controllers\Controller;
 
-use Carbon\Carbon;
-use Jenssegers\Date\Date;
-
 class CertificadoController extends Controller
 {
     /**
@@ -66,7 +63,6 @@ class CertificadoController extends Controller
 
     public function pdf($evento, $user)
     {
-        Date::setLocale('es');
         $usuario = User::find($user);
         $evento  = Evento::find($evento);
         $asistencia = Asistente::where('user_id', $user)->where('evento_id', $evento->id)->first();

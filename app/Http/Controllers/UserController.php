@@ -70,7 +70,7 @@ class UserController extends Controller
         )
         );
 
-        return redirect()->route('user.index')->withStatus(__('User successfully updated.'));
+        return redirect()->route('user.index')->withStatus(__('Usuario actualizado correctamente.'));
     }
 
     /**

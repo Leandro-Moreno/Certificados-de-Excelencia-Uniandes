@@ -89,4 +89,10 @@
   'agfa_rotis_sans_serif_bold' => array(
     'bold' => $fontDir . '\34ca037c226ee0db09e5f109d2ec708b',
   ),
+  'daxbold' => array(
+    'bold' => $fontDir . '\46293132d995d9e223bdf02fc853e3b9',
+  ),
+  'daxmedium' => array(
+    'normal' => $fontDir . '\ff0d7d362df07e5dcaac2fae7afeb11a',
+  ),
 ) ?>

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Model\Eventos\Evento;
 use App\Model\Eventos\Asistente;
 use App\Http\Controllers\Controller;
+use Jenssegers\Date\Date;
 
 class CertificadoController extends Controller
 {

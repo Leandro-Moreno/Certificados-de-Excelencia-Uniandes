@@ -29,7 +29,7 @@
                   </div>
                 </div>
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table table-striped">
                     <thead class=" text-primary">
                       <th>
                           {{ __('Nombre') }}
@@ -38,7 +38,7 @@
                         {{ __('Email') }}
                       </th>
                       <th>
-                        {{ __('Fecha de Creación') }}
+                        {{ __('Documento de Identidad') }}
                       </th>
                       <th class="text-right">
                         {{ __('Acciones') }}
@@ -48,13 +48,13 @@
                       @foreach($users as $user)
                         <tr>
                           <td>
-                            {{ $user->name }}
+                            {{ $user->name }} {{ $user->apellido }}
                           </td>
                           <td>
                             {{ $user->email }}
                           </td>
                           <td>
-                            {{ $user->created_at->format('Y-m-d') }}
+                            {{ $user->tipo_doc }} {{ $user->documento }}
                           </td>
                           <td class="td-actions text-right">
                             @if ($user->id != auth()->id())

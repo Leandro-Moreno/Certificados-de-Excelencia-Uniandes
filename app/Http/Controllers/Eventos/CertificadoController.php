@@ -79,11 +79,16 @@ class CertificadoController extends Controller
             return redirect()->route('certificados')->with('error', '!No asistió al evento!');
         }
 
+        $fecha  = Date::createFromFormat('Y-m-d', $evento->fecha, 'America/Bogota');
+        $resultado = $fecha->format('j \d\e F \d\e Y');
+        $imagen = "storage/firmas/".$evento->firma->imagen;
+
         if (Auth::user()->rol_id <= 2) {
             $pdf = PDF::loadView(
                 'certificados.pdf',
-                ['asistencia' =>
-            $asistencia]
+                ['asistencia' => $asistencia,
+              'fechaEvento'=> $resultado,
+              'imagen'  => $imagen]
             )
             ->setPaper('letter', 'landscape');
             return $pdf->stream('certificado.pdf');
@@ -92,8 +97,9 @@ class CertificadoController extends Controller
             if (Auth::user()->id == $usuario->id) {
                 $pdf = PDF::loadView(
                     'certificados.pdf',
-                    ['asistencia' =>
-                    $asistencia]
+                    ['asistencia' => $asistencia,
+                  'fechaEvento'=> $resultado,
+                  'imagen'  => $imagen]
                 )
                     ->setPaper('letter', 'landscape');
                 return $pdf->stream('certificado.pdf');

@@ -39,8 +39,24 @@
               </h4>
             </div>
             <div class="card-footer">
-              <div class="stats">
+              <div class="stats col-xl-12">
+                <div class="table-responsive">
+                  <table class="table">
 
+                      <tbody>
+                  @foreach($eventos as $evento)
+                  <tr>
+                    <th scope="row">{{$loop->iteration}}</th>
+                    <td>{{$evento->nombre}}</td>
+                    <td class="td-actions text-right"><a rel="tooltip" class="" href="{{ route('eventos.edit', $evento) }}" data-original-title="" title="">
+                      <i class="material-icons">edit</i>
+                      <div class="ripple-container"></div>
+                    </a></td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+              </div>
               </div>
             </div>
           </div>
@@ -51,15 +67,31 @@
           <div class="card card-stats">
             <div class="card-header card-header-danger   card-header-icon">
               <div class="card-icon">
-                <i class="material-icons">how_to_reg</i>
+                <i class="material-icons">supervisor_account</i>
               </div>
               <p class="card-category">{{ __('Administrar') }}</p>
-              <h4 class="card-title">{{ __('Asistencia') }}
+              <h4 class="card-title">{{ __('Usuarios') }}
               </h4>
             </div>
             <div class="card-footer">
-              <div class="stats">
+              <div class="stats col-lg-12 col-md-12 col-sm-12">
+                <div class="table-responsive">
+                  <table class="table">
 
+                      <tbody>
+                  @foreach($asistencia as $asistentes)
+                  <tr>
+                    <th scope="row">{{$loop->iteration}}</th>
+                    <td>{{$asistentes->name}} {{$asistentes->apellido}}</td>
+                    <td class="td-actions text-right"><a rel="tooltip" class="" href="{{ route('asistentes.edit', $asistentes) }}" data-original-title="" title="">
+                      <i class="material-icons">edit</i>
+                      <div class="ripple-container"></div>
+                    </a></td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+              </div>
               </div>
             </div>
           </div>
@@ -77,8 +109,24 @@
               </h4>
             </div>
             <div class="card-footer">
-              <div class="stats">
+              <div class="stats col-lg-12 col-md-12 col-sm-12">
+                <div class="table-responsive">
+                  <table class="table">
 
+                      <tbody>
+                  @foreach($firmas as $firma)
+                  <tr>
+                    <th scope="row">{{$loop->iteration}}</th>
+                    <td>{{$evento->firma->nombre}}</td>
+                    <td class="td-actions text-right"><a rel="tooltip" class="" href="{{ route('eventos.edit', $evento) }}" data-original-title="" title="">
+                      <i class="material-icons">edit</i>
+                      <div class="ripple-container"></div>
+                    </a></td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+              </div>
               </div>
             </div>
           </div>

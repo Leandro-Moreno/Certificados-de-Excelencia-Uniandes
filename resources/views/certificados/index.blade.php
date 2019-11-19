@@ -60,10 +60,10 @@
                             {{ $dato->eventos->nombre }}
                           </td>
                           <td>
-                            {{ $dato->fecha }}
+                            {{ $dato->eventos->fecha }}
                           </td>
                           <td>
-                            {{ $dato->hora }} Horas
+                            {{ $dato->eventos->hora }} Horas
                           </td>
                           <td class="td-actions text-right">
                             <a rel="tooltip" class="btn btn-success btn-link" href="{{ url('certificados/'.$dato->evento_id.'/'.Auth::user()->id) }}" data-original-title="" title="">

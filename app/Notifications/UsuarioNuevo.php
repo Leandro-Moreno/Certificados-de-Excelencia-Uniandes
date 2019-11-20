@@ -45,16 +45,6 @@ class UsuarioNuevo extends Notification
     {
 
         $correo = Correo::first();
-        // dd($correo);
-        config(['mail.host' => $correo->host]);
-        config(['mail.driver' => $correo->driver]);
-        config(['mail.port' => $correo->port]);
-        config(['mail.encryption' => $correo->encryption]);
-        config(['mail.username' => $correo->username]);
-        config(['mail.password' => $correo->password]);
-        config(['mail.from.address' => $correo->address]);
-        config(['mail.from.name' => $correo->name]);
-
         return (new MailMessage)->markdown('mail.usuario.nuevo');
     }
 

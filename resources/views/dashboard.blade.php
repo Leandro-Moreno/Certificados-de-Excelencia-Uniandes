@@ -29,7 +29,7 @@
         @if (Auth::user()->rol_id <= 2)
         @if($eventos->count() > 0)
         <div class="col-lg-4 col-md-6 col-sm-6">
-          <a class="nav-link" href="{{ route('eventos') }}">
+          <a class="" href="{{ route('eventos') }}">
           <div class="card card-stats">
             <div class="card-header card-header-primary card-header-icon">
               <div class="card-icon">
@@ -65,7 +65,7 @@
         </div>
         @endif
         <div class="col-lg-4 col-md-6 col-sm-6">
-          <a class="nav-link" href="{{ route('asistentes') }}">
+          <a class="" href="{{ route('asistentes') }}">
           <div class="card card-stats">
             <div class="card-header card-header-danger   card-header-icon">
               <div class="card-icon">
@@ -100,7 +100,7 @@
         </a>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-6">
-          <a class="nav-link" href="{{ route('firmas') }}">
+          <a class="" href="{{ route('firmas') }}">
           <div class="card card-stats">
             <div class="card-header card-header-success card-header-icon">
               <div class="card-icon">

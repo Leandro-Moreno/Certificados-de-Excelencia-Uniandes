@@ -18927,6 +18927,12 @@ Copyright (c) 2015 Daniel Eden
   }
 }
 
+@media all and (max-width: 576px) {
+  .main-panel > .content {
+    margin-top: 150px;
+  }
+}
+
 /*          Changes for small display      */
 
 @media (max-width: 991px) {

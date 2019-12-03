@@ -81,18 +81,18 @@
     'normal' => $rootDir . '\lib\fonts\DejaVuSerif',
   ),
   'agfa_rotis_sans_serif_exbd' => array(
-    'normal' => $fontDir . '\a64f66aab8d8488ea60344e98b1e6b53',
+    'normal' => $fontDir . '/a64f66aab8d8488ea60344e98b1e6b53',
   ),
   'agfa_rotis_sans_serif' => array(
-    'normal' => $fontDir . '\7954c1bedb3ba143af15ebda1d52a585',
+    'normal' => $fontDir . '/7954c1bedb3ba143af15ebda1d52a585',
   ),
   'agfa_rotis_sans_serif_bold' => array(
-    'bold' => $fontDir . '\34ca037c226ee0db09e5f109d2ec708b',
+    'bold' => $fontDir . '/34ca037c226ee0db09e5f109d2ec708b',
   ),
   'daxbold' => array(
-    'bold' => $fontDir . '\46293132d995d9e223bdf02fc853e3b9',
+    'bold' => $fontDir . '/46293132d995d9e223bdf02fc853e3b9',
   ),
   'daxmedium' => array(
-    'normal' => $fontDir . '\ff0d7d362df07e5dcaac2fae7afeb11a',
+    'normal' => $fontDir . '/ff0d7d362df07e5dcaac2fae7afeb11a',
   ),
 ) ?>

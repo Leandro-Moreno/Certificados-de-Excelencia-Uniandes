@@ -14493,6 +14493,7 @@ fieldset[disabled] .form-group .form-control {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  z-index: -1;
 }
 
 .page-header .container {
@@ -15238,9 +15239,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 .footer {
   padding: 0.9375rem 0;
   text-align: center;
-  /* Safari */
-  /* Safari 6.1+ */
-  display: flex;
+  display: block;
 }
 
 .footer ul {
@@ -18925,6 +18924,12 @@ Copyright (c) 2015 Daniel Eden
 @media screen and (max-width: 400px) {
   .cd-vertical-nav {
     display: none !important;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .main-panel > .content {
+    margin-top: 150px;
   }
 }
 

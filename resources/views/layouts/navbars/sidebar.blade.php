@@ -13,32 +13,52 @@
             <p>{{ __('Inicio') }}</p>
         </a>
       </li>
+      <li class="nav-item{{ $activePage == 'certificados' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('certificados') }}">
+          <i class="material-icons">picture_as_pdf</i>
+            <p>{{ __('Mis Certificados') }}</p>
+        </a>
+      </li>
       @if (Auth::user()->rol_id <= 2)
-      <li class="nav-item{{ $activePage == 'eventos' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('eventos') }}">
-          <i class="material-icons">next_week</i>
-            <p>{{ __('Eventos') }}</p>
+      <li class="nav-item {{ ($activePage == 'eventos' || $activePage == 'asistentes'|| $activePage == 'user-management'|| $activePage == 'firmas') ? ' active' : '' }}">
+        <a class="nav-link" data-toggle="collapse" href="#Eventos" aria-expanded="{{ ($activePage == 'eventos' || $activePage == 'asistentes'|| $activePage == 'user-management'|| $activePage == 'firmas') ? 'true' : 'false' }}">
+            <i class="material-icons">supervised_user_circle</i>
+          <p>{{ __('Administrar Eventos') }}
+            <b class="caret"></b>
+          </p>
         </a>
-      </li>
-      <li class="nav-item{{ $activePage == 'asistentes' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('asistentes') }}">
-          <i class="material-icons">how_to_reg</i>
-            <p>{{ __('Asistencia') }}</p>
-        </a>
-      </li>
-      <li class="nav-item{{ $activePage == 'firmas' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('firmas') }}">
-          <i class="material-icons">create</i>
-            <p>{{ __('firmas') }}</p>
-        </a>
+        <div class="collapse {{ ($activePage == 'eventos' || $activePage == 'asistentes'|| $activePage == 'user-management'|| $activePage == 'firmas') ? ' show' : '' }}" id="Eventos">
+          <ul class="nav">
+            <li class="nav-item{{ $activePage == 'eventos' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('eventos') }}">
+                <i class="material-icons">next_week</i>
+                  <p>{{ __('Eventos') }}</p>
+              </a>
+            </li>
+
+            <li class="nav-item{{ $activePage == 'asistentes' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('asistentes') }}">
+                <i class="material-icons">how_to_reg</i>
+                  <p>{{ __('Asistencia') }}</p>
+              </a>
+            </li>
+            <li class="nav-item{{ $activePage == 'firmas' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('firmas') }}">
+                <i class="material-icons">create</i>
+                  <p>{{ __('firmas') }}</p>
+              </a>
+            </li>
+            <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('user.index') }}">
+                <i class="material-icons">supervisor_account</i>
+                  <p>{{ __('Administrar usuarios') }}</p>
+              </a>
+            </li>
+          </ul>
+        </div>
       </li>
 
-      <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('user.index') }}">
-          <i class="material-icons">supervisor_account</i>
-            <p>{{ __('Administrar usuarios') }}</p>
-        </a>
-      </li>
+
 
       <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'correo') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#Configuracion" aria-expanded="{{ ($activePage == 'profile' || $activePage == 'correo') ? 'true' : 'false' }}">
@@ -68,14 +88,6 @@
       </li>
       @endif
 
-      @if (Auth::user()->rol_id == 3)
-      <li class="nav-item{{ $activePage == 'certificados' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('certificados') }}">
-          <i class="material-icons">picture_as_pdf</i>
-            <p>{{ __('Certificados') }}</p>
-        </a>
-      </li>
-      @endif
       <li class="nav-item d-xl-none">
         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
 

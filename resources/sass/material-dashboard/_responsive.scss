@@ -304,6 +304,12 @@
     display: none !important;
   }
 }
+@media all and (max-width: 576px){
+  
+  .main-panel > .content{
+    margin-top: 150px;
+  }
+}
 
 /*          Changes for small display      */
 

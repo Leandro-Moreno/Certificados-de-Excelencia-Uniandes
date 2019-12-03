@@ -25,8 +25,23 @@
                 @endif
                 <div class="row">
                   <div class="col-6 text-left">
-                    <a href="{{ url('certificado/asistentes/'.$evento->id)}}" class="btn btn-sm btn-success " >{{ __('Enviar notificación') }}</a>
+                    <div id="notifi" href="{{ url('certificado/asistentes/'.$evento->id)}} " class="btn btn-sm btn-success " >{{ __('Enviar notificación') }}</div>
                   </div>
+                  @push('js')
+                  <script type="text/javascript">
+                    console.log("hola");
+              $("#notifi").click(function(e){
+                Swal.fire(
+'Las notificaciones se están enviando',
+'Espera dos segundos...',
+'success'
+);
+e.preventDefault();
+        window.location = "{{ url('certificado/asistentes/'.$evento->id)}}";
+                });
+
+  </script>
+  @endpush
                   <div class="col-6 text-right">
                     <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#asistentesAdd">{{ __('Añadir asistente') }}</a>
                     <a href="{{ route('asistentes') }}" class="btn btn-sm btn-primary">{{ __('Volver a la lista') }}</a>

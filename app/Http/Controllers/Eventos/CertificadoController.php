@@ -84,13 +84,15 @@ class CertificadoController extends Controller
         $fecha  = Date::createFromFormat('Y-m-d', $evento->fecha, 'America/Bogota');
         $resultado = $fecha->format('j \d\e F \d\e Y');
         $imagen = "storage/firmas/".$evento->firma->imagen;
+        $imagen2 = "storage/firmas/".$evento->firma2->imagen;
 
         if (Auth::user()->rol_id <= 2) {
             $pdf = PDF::loadView(
                 'certificados.pdf',
                 ['asistencia' => $asistencia,
               'fechaEvento'=> $resultado,
-              'imagen'  => $imagen]
+              'imagen'  => $imagen,
+              'imagen2'  => $imagen2]
             )
             ->setPaper('letter', 'landscape');
             return $pdf->stream('certificado.pdf');
@@ -101,7 +103,8 @@ class CertificadoController extends Controller
                     'certificados.pdf',
                     ['asistencia' => $asistencia,
                   'fechaEvento'=> $resultado,
-                  'imagen'  => $imagen]
+                  'imagen'  => $imagen,
+                  'imagen2'  => $imagen2]
                 )
                     ->setPaper('letter', 'landscape');
                 return $pdf->stream('certificado.pdf');

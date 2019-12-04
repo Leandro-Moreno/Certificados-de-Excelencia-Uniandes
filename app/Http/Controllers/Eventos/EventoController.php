@@ -45,6 +45,7 @@ class EventoController extends Controller
                 'nombre' => $request->nombre,
                 'descripcion' => $request->descripcion,
                 'firma_id' => $request->firma,
+                'firma2_id' => $request->firma2,
                 'fecha' => $request->fecha,
                 'hora' => $request->hora,
             ]
@@ -78,6 +79,7 @@ class EventoController extends Controller
         $evento->estado = $request->estado;
         $evento->descripcion = $request->descripcion;
         $evento->firma_id = $request->firma;
+        $evento->firma2_id = $request->firma2;
         $evento->fecha = $request->fecha;
         $evento->hora = $request->hora;
         $evento->save();

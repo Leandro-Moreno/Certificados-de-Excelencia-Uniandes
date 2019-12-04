@@ -402,6 +402,13 @@ body {
 	left: 170.797px;
 	top: 535.105px;
 }
+.imagenFirma2{
+	position: absolute;
+	width:auto;
+	height: 50px;
+	left: 585.797px;
+	top: 535.105px;
+}
 </style>
 </head>
 <body>
@@ -451,7 +458,7 @@ body {
 	<span style="">{{$asistencia->eventos->firma->area}}</span>
 </div>
 <div id="Diana_Betancourt_Galindo_Direc">
-	<span style="">Diana Betancourt Galindo<br/></span><span id="diana-info" style="font-style:normal;font-weight:normal;font-size:12.726670265197754px;">Directora<br/>Dirección de Educación Continua</span>
+	<span style="">{{$asistencia->eventos->firma2->nombre}}<br/></span><span id="diana-info" style="font-style:normal;font-weight:normal;font-size:12.726670265197754px;">{{$asistencia->eventos->firma2->cargo}}<br/>{{$asistencia->eventos->firma2->area}}</span>
 </div>
 <div id="Universidad_de_los_Andes___Vig">
 	<span>Universidad de los Andes | Vigilada Mineducación. <br/>Reconocimiento como Universidad: Decreto 1297 del 30 de mayo de 1964.<br/>Reconocimiento personería jurídica: Resolución 28 del 23 de febrero de 1949 Minjusticia.</span>
@@ -466,6 +473,7 @@ body {
 	<span>VI{{str_pad($asistencia->asistencia, 6, '0', STR_PAD_LEFT)}}</span>
 </div>
 <img class="imagenFirma" src="{{asset($imagen) }}" />
+<img class="imagenFirma2" src="{{asset($imagen2) }}" />
  <img class="logoUniandes"  src="{{ asset('material/img/logoUniandes.png') }}"/>
 </div>
 </body>

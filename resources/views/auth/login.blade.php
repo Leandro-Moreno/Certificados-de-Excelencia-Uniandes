@@ -55,6 +55,10 @@
           </div>
           <div class="card-footer justify-content-center">
             <button type="submit" class="btn btn-outline-primary btn-lg">{{ __('Ingresar') }}</button>
+
+            <a href="{{ url('/auth') }}" class="btn btn-outline-success btn-lg">
+              <img src="{{asset('excelencia/iconoUniandes.png') }}" />
+            </a>
           </div>
         </div>
       </form>

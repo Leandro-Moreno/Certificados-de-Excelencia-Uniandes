@@ -114,7 +114,7 @@
                     <div class="form-group{{ $errors->has('estado') ? ' has-danger' : '' }}">
                       <div class="togglebutton">
                         <label>
-                          <input name="estado" type="checkbox" checked="" value="{{ old('estado', 1) }}">
+                          <input name="estado" type="checkbox" checked="" value="{{ old('estado', 1) }}">{{ old('estado', 1) }}</input>
                           <span class="toggle"></span>
                         </label>
                       </div>

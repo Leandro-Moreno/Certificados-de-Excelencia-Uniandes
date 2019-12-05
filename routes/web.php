@@ -53,14 +53,15 @@ Route::group(['middleware' => 'auth'], function () {
 
   Route::get('descargar/asistentes/{id}', 'Eventos\AsistenteController@descargar');
 
-  Route::post('add/asistentes/{id}', 'Eventos\AsistenteController@addAsistente');
-  Route::post('add/asistenteexistente/{id}', 'Eventos\AsistenteController@addAsistenteExistente');
-  Route::post('find/asistentes', 'Eventos\AsistenteController@findAsistente');
-  Route::get('certificado/asistentes/{id}', 'Eventos\AsistenteController@Enviocertificados');
+  Route::post('add/asistentes/{id}', 'Eventos\AsistenteController@addAsistente')->middleware('auth');
+  Route::post('add/asistenteexistente/{id}', 'Eventos\AsistenteController@addAsistenteExistente')->middleware('auth');
+  Route::post('find/asistentes', 'Eventos\AsistenteController@findAsistente')->middleware('auth');
+  Route::get('find/asistentes', 'Eventos\AsistenteController@findAsistente')->middleware('auth');
+  Route::get('certificado/asistentes/{id}', 'Eventos\AsistenteController@Enviocertificados')->middleware('auth');
 
-	Route::get('certificados', ['as' => 'certificados', 'uses' => 'Eventos\CertificadoController@index']);
-  Route::get('certificados/{evento}/{user}', 'Eventos\CertificadoController@pdf');
-	Route::get('certificadosb/{evento}/{user}', 'Eventos\CertificadoController@pdfb');
+	Route::get('certificados', ['as' => 'certificados', 'uses' => 'Eventos\CertificadoController@index'])->middleware('auth');
+  Route::get('certificados/{evento}/{user}', 'Eventos\CertificadoController@pdf')->middleware('auth');
+	Route::get('certificadosb/{evento}/{user}', 'Eventos\CertificadoController@pdfb')->middleware('auth');
 
 });
 

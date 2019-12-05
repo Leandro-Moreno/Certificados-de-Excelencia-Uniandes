@@ -178,15 +178,10 @@ class AsistenteController extends Controller
 
     public function findAsistente(Request $request)
     {
-        $usuario = User::where('email', $request->correo)->first();
+        $usuario = User::where('email','like', '%'.$request->correo.'%')->first();
         if ($usuario) {
-            return response()->json([
-            'respuesta' => 1,
-            'id' => $usuario->id,
-            'nombre' => $usuario->name.' '.$usuario->name2.' '.$usuario->apellido.' '.$usuario->apellido2,
-            'apellido2' => 'CA',
-            'documento' => 'CA',
-        ]);
+          // dd($usuario);
+            return response()->json($usuario);
         } else {
             return response()->json(['respuesta' => 0]);
         }

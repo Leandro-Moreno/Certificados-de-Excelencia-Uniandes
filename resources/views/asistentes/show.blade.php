@@ -71,10 +71,11 @@ e.preventDefault();
                           @csrf
                           <small class="form-text text-muted" style="color: blue!important;" >Resultado:</small>
                           <input type="text" class="form-control" id="InputnombreCompleto" aria-describedby="nameHelp" disabled>
+                          <input type="text" class="form-control" id="InputCorreo" aria-describedby="nameHelp" disabled>
                           <input type="hidden" id="Inputid" name="usuario" >
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                              <button type="submit" class="btn btn-primary">Guardar asistente</button>
+
+                              <button type="submit" class="btn btn-primary">Añadir asistente</button>
                           </div>
                         </form>
                         <form action="{{url('add/asistentes/'.$evento->id)}}" method="post" style="display: none;" id="formAsistente" >
@@ -132,6 +133,10 @@ e.preventDefault();
                              <input type="text" class="form-control" id="Inputmedio" aria-describedby="medioHelp" placeholder="Medio" name="medio">
                            </div>
                            </div>
+                           <div class="modal-footer">
+                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                             <button type="submit" class="btn btn-primary">Añadir asistente</button>
+                           </div>
                          </div>
                          <!-- <div class="form-row">
                            <label class="col-form-label">Acepta uso de imagen</label>
@@ -142,10 +147,6 @@ e.preventDefault();
                               </label>
                             </div>
                         </div> -->
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                            <button type="submit" class="btn btn-primary">Guardar asistente</button>
-                        </div>
                       </div>
 
                       </form>
@@ -216,21 +217,21 @@ e.preventDefault();
   @push('js')
   <script type="text/javascript">
 
-  $("#buscarAsistente").click(function(){
+  $("#correoBuscar").on('input',function(e){
       var correo = $("#correoBuscar").val();
       var csrftoken= "{{ csrf_token() }}";
 
       if (!correo) {
         return alert('Ingrese un correo valido');
       }
-
-      $.post("{{ url('find/asistentes')}}", {correo: correo, _token: csrftoken}, function(result){
+      $.get("{{ url('find/asistentes')}}", {correo: correo, _token: csrftoken}, function(result){
         if (result.respuesta == 0) {
           $( "#formAsistente" ).show("slow");
           $( "#formAsistenteExistente" ).hide();
         }
-        if (result.respuesta == 1) {
-          $( "#InputnombreCompleto" ).val(result.nombre);
+        if (result.respuesta !== 0) {
+          $( "#InputnombreCompleto" ).val(result.name.concat(" ",result.apellido));
+          $( "#InputCorreo" ).val(result.email);
           $( "#Inputid" ).val(result.id);
           $( "#formAsistenteExistente" ).show("slow");
           $( "#formAsistente" ).hide();

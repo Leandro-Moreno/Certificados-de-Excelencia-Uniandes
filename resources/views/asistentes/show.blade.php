@@ -221,16 +221,13 @@ e.preventDefault();
       var correo = $("#correoBuscar").val();
       var csrftoken= "{{ csrf_token() }}";
 
-      if (!correo) {
-        return alert('Ingrese un correo valido');
-      }
       $.get("{{ url('find/asistentes')}}", {correo: correo, _token: csrftoken}, function(result){
         if (result.respuesta == 0) {
           $( "#formAsistente" ).show("slow");
           $( "#formAsistenteExistente" ).hide();
         }
         if (result.respuesta !== 0) {
-          $( "#InputnombreCompleto" ).val(result.name.concat(" ",result.apellido));
+          $( "#InputnombreCompleto" ).val(result.name.concat(" ",result.apellido!=null?result.apellido:""));
           $( "#InputCorreo" ).val(result.email);
           $( "#Inputid" ).val(result.id);
           $( "#formAsistenteExistente" ).show("slow");

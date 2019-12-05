@@ -11,7 +11,7 @@
 
             <div class="card ">
               <div class="card-header card-header-primary">
-                <h4 class="card-title">{{ __('Edit Evento') }}</h4>
+                <h4 class="card-title">{{ __('Editar Evento') }}</h4>
                 <p class="card-category"></p>
               </div>
               <div class="card-body ">
@@ -21,7 +21,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <label class="col-sm-2 col-form-label">{{ __('nombre') }}</label>
+                  <label class="col-sm-2 col-form-label">{{ __('Nombre del evento') }}</label>
                   <div class="col-sm-7">
                     <div class="form-group{{ $errors->has('nombre') ? ' has-danger' : '' }}">
                       <input class="form-control{{ $errors->has('nombre') ? ' is-invalid' : '' }}" name="nombre" id="input-nombre" type="text" placeholder="{{ __('nombre') }}" value="{{ old('nombre', $evento->nombre) }}" required="true" aria-required="true"/>
@@ -43,7 +43,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <label class="col-sm-2 col-form-label" for="input-fecha">{{ __(' fecha') }}</label>
+                  <label class="col-sm-2 col-form-label" for="input-fecha">{{ __('Fecha') }}</label>
                   <div class="col-sm-7">
                     <div class="form-group{{ $errors->has('fecha') ? ' has-danger' : '' }}">
                       <input class="form-control{{ $errors->has('fecha') ? ' is-invalid' : '' }}" input type="date" name="fecha" id="input-fecha" placeholder="{{ __('fecha') }}" value="{{ old('fecha', $evento->fecha) }}" />
@@ -94,13 +94,14 @@
                   </div>
                 </div>
                 <div class="row">
-                  <label class="col-sm-2 col-form-label">{{ __('estado') }}</label>
+                  <label class="col-sm-2 col-form-label">{{ __('Estado') }}</label>
                   <div class="col-sm-7">
                     <div class="form-group{{ $errors->has('estado') ? ' has-danger' : '' }}">
                       <div class="togglebutton">
                         <label>
-                          <input name="estado" type="checkbox" {{ $evento->estado ? ' checked' : '' }}  value="{{ old('estado', 1) }}">
+                          <input id="estadoTogg" name="estado" type="checkbox" {{ $evento->estado==1 ? ' checked' : '' }}  value="{{ old('estado', 1) }}">
                           <span class="toggle"></span>
+                          <span id="toggContenido">{{ $evento->estado==1?"Activo":"No activo" }}</span>
                         </label>
                       </div>
                       @if ($errors->has('estado'))
@@ -119,4 +120,17 @@
       </div>
     </div>
   </div>
+  @push('js')
+  <script type="text/javascript">
+
+  $(".toggle").click(function(e){
+    if($("#estadoTogg").prop( "checked" )){
+
+    }
+      $("#estadoTogg").prop( "checked" )?$( "#toggContenido" ).text("No activo"):$( "#toggContenido" ).text("Activo");
+
+      });
+
+  </script>
+  @endpush
 @endsection

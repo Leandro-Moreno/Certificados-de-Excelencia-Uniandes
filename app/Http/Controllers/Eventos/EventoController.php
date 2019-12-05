@@ -63,6 +63,7 @@ class EventoController extends Controller
      */
     public function edit(Evento $evento, Firma $model)
     {
+      // dd($evento);
         return view('eventos.edit', compact('evento'), ['firmas' => $model->all()]);
     }
 

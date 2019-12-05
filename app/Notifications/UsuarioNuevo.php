@@ -11,6 +11,7 @@ use App\Correo;
 
 class UsuarioNuevo extends Notification
 {
+    protected $nombreEvento;
     use Queueable;
 
     /**
@@ -18,10 +19,10 @@ class UsuarioNuevo extends Notification
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($nombre)
     {
-        //
-    }
+      $this->nombreEvento  = $nombre;
+     }
 
     /**
      * Get the notification's delivery channels.
@@ -31,7 +32,6 @@ class UsuarioNuevo extends Notification
      */
     public function via($notifiable)
     {
-        // dd("hola");
         return ['mail'];
     }
 
@@ -45,7 +45,7 @@ class UsuarioNuevo extends Notification
     {
 
         $correo = Correo::first();
-        return (new MailMessage)->markdown('mail.usuario.nuevo');
+        return (new MailMessage)->markdown('mail.usuario.nuevo', ['nombreEvento' => $this->nombreEvento]);
     }
 
     /**

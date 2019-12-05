@@ -14,7 +14,12 @@
 Route::get('/', function () {
     return redirect('home');
 });
+
 Auth::routes();
+
+Route::get('login/local', 'Auth\LoginController@local')->name('login-local');
+Route::get('auth', 'Auth\LoginController@redirectToProvider');
+Route::get('auth/callback', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('register', function () { return redirect('home'); });
 Route::post('register', function () { return redirect('home'); });

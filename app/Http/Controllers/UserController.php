@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Hash;
+use App\Rol;
 
 class UserController extends Controller
 {
@@ -24,7 +25,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
+    public function create(Firma $model)
     {
         return view('users.create');
     }
@@ -49,9 +50,9 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\View\View
      */
-    public function edit(User $user)
+    public function edit(User $user, Rol $model)
     {
-        return view('users.edit', compact('user'));
+        return view('users.edit', compact('user'), ['roles' => $model->all()]);
     }
 
     /**

@@ -206,6 +206,22 @@
                       </div>
                     </div>
                   </div>
+                  <div class="col-md-6">
+                    <label class="col-sm-2 col-form-label">{{ __('Rol') }}</label>
+                    <div class="col-sm-7">
+                      <div class="form-group{{ $errors->has('rol_id') ? ' has-danger' : '' }}">
+                        <select class="form-control{{ $errors->has('rol_id') ? ' is-invalid' : '' }}" id="input-rol" required="true" aria-required="true" name="rol_id">
+                          <option value="{{ $user->rol_id }}">{{$user->rol_id}}</option>
+                          @foreach($roles as $firma )
+                          <option value="{{ $firma->id }}">{{ $firma->nombre }}</option>
+                          @endforeach
+                        </select>
+                        @if ($errors->has('firma2'))
+                        <span id="firma-error" class="error text-danger" for="input-firma">{{ $errors->first('firma2') }}</span>
+                        @endif
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
 

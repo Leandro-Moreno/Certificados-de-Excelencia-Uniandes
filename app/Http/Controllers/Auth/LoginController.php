@@ -55,19 +55,31 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function handleProviderCallback()
-    {
-        $user = Socialite::driver('azure')->user();
-        $user = User::where('email',$user->email)->first();
-        if ($user) {
-          Auth::login($user);
-          return redirect($this->redirectTo);
-        }
-        else{
-          session()->flash('message', 'Usuario no existe');
-          return redirect('login');
-        }
-    }
+     public function handleProviderCallback()
+     {
+         $user = Socialite::driver('azure')->user();
+         $givenName  =  explode(" ", $user->user["givenName"]);
+         $surname  =  explode(" ", $user->user["surname"]);
+         $jobTitle  = $user->user["jobTitle"];
+         User::where('email',$user->email)
+                           ->first()
+                           ->update(array(
+                             'name' => $givenName[0],
+                             'name2' => $givenName[1],
+                             'apellido' => $surname[0],
+                             'apellido2' => $surname[1],
+                             'cargo' => $jobTitle,
+                           ));
+         $user = User::where('email',$user->email)->first();
+         if ($user) {
+           Auth::login($user);
+           return redirect($this->redirectTo);
+         }
+         else{
+           session()->flash('message', 'Usuario no existe');
+           return redirect('login');
+         }
+     }
 
     /**
      * Redirect the user to the GitHub authentication page.

@@ -46,6 +46,8 @@ return [
 
         'read_only' => true,
 
+        'heading' => 'original',
+
         'heading_row' => [
 
             /*
@@ -73,7 +75,7 @@ return [
             'enclosure'              => '"',
             'escape_character'       => '\\',
             'contiguous'             => false,
-            'input_encoding'         => 'UTF-8',
+            'input_encoding'         => 'ISO-8859-1',
         ],
     ],
 

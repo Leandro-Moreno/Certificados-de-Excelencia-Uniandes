@@ -48,10 +48,10 @@
                       @foreach($users as $user)
                         <tr>
                           <td>
-                            {{ $user->name }} {{ $user->apellido }}
+                            {{ $user->name }} {{ $user->name2 }} {{ $user->apellido }} {{ $user->apellido2 }}
                           </td>
                           <td>
-                            {{ $user->email }}
+                            {{ $user->email }} {{ $user->rol_id }}
                           </td>
                           <td>
                             {{ $user->tipo_doc }} {{ $user->documento }}

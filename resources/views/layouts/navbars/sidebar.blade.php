@@ -27,7 +27,7 @@
             <b class="caret"></b>
           </p>
         </a>
-        <div class="collapse {{ ($activePage == 'eventos' || $activePage == 'asistentes'|| $activePage == 'user-management'|| $activePage == 'firmas') ? ' show' : '' }}" id="Eventos">
+        <div class="collapse {{ ($activePage == 'eventos' || $activePage == 'asistentes'|| $activePage == 'user-management'|| $activePage == 'admin-management'|| $activePage == 'firmas') ? ' show' : '' }}" id="Eventos">
           <ul class="nav">
             <li class="nav-item{{ $activePage == 'eventos' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('eventos') }}">
@@ -52,6 +52,12 @@
               <a class="nav-link" href="{{ route('user.index') }}">
                 <i class="material-icons">supervisor_account</i>
                   <p>{{ __('Administrar usuarios') }}</p>
+              </a>
+            </li>
+            <li class="nav-item{{ $activePage == 'admin-management' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('user.admin') }}">
+                <i class="material-icons">security</i>
+                  <p>{{ __('Mostrar Administradores') }}</p>
               </a>
             </li>
           </ul>

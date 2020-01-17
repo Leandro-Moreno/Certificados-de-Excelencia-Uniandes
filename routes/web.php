@@ -68,6 +68,8 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('certificados/{evento}/{user}', 'Eventos\CertificadoController@pdf')->middleware('auth');
 	Route::get('certificadosb/{evento}/{user}', 'Eventos\CertificadoController@pdfb')->middleware('auth');
 
+  Route::get('admin/profile', 'UserController@admin')->name('user.admin')->middleware('administrador');
+
 });
 
 Route::get('certificados/publico', 'Eventos\CertificadoController@publico');

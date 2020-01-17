@@ -211,7 +211,7 @@
                     <div class="col-sm-7">
                       <div class="form-group{{ $errors->has('rol_id') ? ' has-danger' : '' }}">
                         <select class="form-control{{ $errors->has('rol_id') ? ' is-invalid' : '' }}" id="input-rol" required="true" aria-required="true" name="rol_id">
-                          <option value="{{ $user->rol_id }}">{{$user->rol_id}}</option>
+                          <option value="{{ $user->rol_id }}">{{$user->rol->nombre}}</option>
                           @foreach($roles as $firma )
                           <option value="{{ $firma->id }}">{{ $firma->nombre }}</option>
                           @endforeach

@@ -21,6 +21,17 @@ class UserController extends Controller
     }
 
     /**
+     * Display a listing of the users
+     *
+     * @param  \App\User  $model
+     * @return \Illuminate\View\View
+     */
+    public function Admin(User $model)
+    {
+        return view('users.admin', ['users' => $model->where('rol_id',1)->get()]);
+    }
+
+    /**
      * Show the form for creating a new user
      *
      * @return \Illuminate\View\View

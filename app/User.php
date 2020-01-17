@@ -42,4 +42,10 @@ class User extends Authenticatable
     {
         $this->notify(new CustomResetPasswordNotification($token));
     }
+
+    public function rol()
+    {
+        return $this->belongsTo('App\Rol', 'rol_id');
+    }
+
 }

@@ -27,7 +27,7 @@
             <b class="caret"></b>
           </p>
         </a>
-        <div class="collapse {{ ($activePage == 'eventos' || $activePage == 'asistentes'|| $activePage == 'user-management'|| $activePage == 'admin-management'|| $activePage == 'firmas') ? ' show' : '' }}" id="Eventos">
+        <div class="collapse {{ ($activePage == 'eventos' || $activePage == 'asistentes'|| $activePage == 'user-management'|| $activePage == 'firmas') ? ' show' : '' }}" id="Eventos">
           <ul class="nav">
             <li class="nav-item{{ $activePage == 'eventos' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('eventos') }}">
@@ -54,26 +54,21 @@
                   <p>{{ __('Administrar usuarios') }}</p>
               </a>
             </li>
-            <li class="nav-item{{ $activePage == 'admin-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('user.admin') }}">
-                <i class="material-icons">security</i>
-                  <p>{{ __('Mostrar Administradores') }}</p>
-              </a>
-            </li>
+
           </ul>
         </div>
       </li>
 
 
 
-      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'correo') ? ' active' : '' }}">
+      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'correo'|| $activePage == 'admin-management') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#Configuracion" aria-expanded="{{ ($activePage == 'profile' || $activePage == 'correo') ? 'true' : 'false' }}">
             <i class="material-icons">settings_applications</i>
           <p>{{ __('Configuración') }}
             <b class="caret"></b>
           </p>
         </a>
-        <div class="collapse {{ ($activePage == 'profile' || $activePage == 'correo') ? ' show' : '' }}" id="Configuracion">
+        <div class="collapse {{ ($activePage == 'profile' || $activePage == 'correo'|| $activePage == 'admin-management') ? ' show' : '' }}" id="Configuracion">
           <ul class="nav">
             <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('profile.edit') }}">
@@ -88,7 +83,12 @@
                 <p> {{ __('Configuración de Correo') }} </p>
               </a>
             </li>
-
+            <li class="nav-item{{ $activePage == 'admin-management' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('user.admin') }}">
+                <i class="material-icons">security</i>
+                  <p>{{ __('Mostrar Administradores') }}</p>
+              </a>
+            </li>
           </ul>
         </div>
       </li>

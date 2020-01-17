@@ -158,10 +158,10 @@ e.preventDefault();
                   <table class="table table-striped w-auto">
                     <thead class=" text-primary">
                       <th scope="col">
-                          {{ __('Nombre') }}
+                          {{ __('Nombres') }}
                       </th>
                       <th scope="col">
-                          {{ __('Apellido') }}
+                          {{ __('Apellidos') }}
                       </th>
                       <th scope="col">
                           {{ __('Correo') }}
@@ -177,10 +177,10 @@ e.preventDefault();
                       @foreach($datos as $dato)
                         <tr>
                           <td>
-                            {{ $dato->usuarios->name }}
+                            {{ $dato->usuarios->name }} {{ $dato->usuarios->name2 }}
                           </td>
                           <td>
-                            {{ $dato->usuarios->apellido }}
+                            {{ $dato->usuarios->apellido }} {{ $dato->usuarios->apellido2 }}
                           </td>
                           <td>
                             {{ $dato->usuarios->email }}

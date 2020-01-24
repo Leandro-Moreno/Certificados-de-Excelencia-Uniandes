@@ -1,5 +1,5 @@
 @component('mail::message')
-*Cordial saludo,*
+Cordial saludo,
 {{$nombreEvento}}
 
 Gracias por asistir a los Seminarios Virtuales de Excelencia de la Facultad de Ingeniería de la Universidad de los Andes.

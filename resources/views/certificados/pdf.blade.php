@@ -54,10 +54,9 @@ body {
 	opacity: 1;
 	position: absolute;
 	left: 178.345px;
-	top: 143.869px;
+	top: 110.869px;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
 	width: 569.533px;
 	height: 97.594px;
 	line-height: 35.77777862548828px;
@@ -245,7 +244,6 @@ body {
 	top: 590.105px;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
 	width: 254.105px;
 	height: 23.957px;
 	line-height: 15.272005081176758px;
@@ -265,7 +263,6 @@ body {
 	top: 624.367px;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
 	width: 254.105px;
 	height: 23.957px;
 	line-height: 15.272005081176758px;
@@ -285,7 +282,6 @@ body {
 	top: 587.963px;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
 	width: 254.105px;
 	height: 63.788px;
 	line-height: 16px;

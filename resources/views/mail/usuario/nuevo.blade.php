@@ -4,10 +4,6 @@
 
 Gracias por asistir a los Seminarios Virtuales de Excelencia de la Facultad de Ingeniería de la Universidad de los Andes.
 
-Cordial saludo,
-
-Gracias por asistir a los Seminarios Virtuales de Excelencia de la Facultad de Ingeniería de la Universidad de los Andes.
-
 Si no tiene cuenta para descargar su certificado,
 <?php
 $url=url('/login');

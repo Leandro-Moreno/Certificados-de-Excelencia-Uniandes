@@ -36,7 +36,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create(Firma $model)
+    public function create()
     {
         return view('users.create');
     }

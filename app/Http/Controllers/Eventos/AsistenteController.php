@@ -196,7 +196,6 @@ class AsistenteController extends Controller
      */
     public function Enviocertificados($id)
     {
-      $nombreEvento = Evento::where('id',$id)->first()->nombre;
         $asistencias = Asistente::where('evento_id', $id)->get();
         foreach ($asistencias as $asistencia) {
           $nombre = $asistencia->usuarios->name . " " . $asistencia->usuarios->name2;

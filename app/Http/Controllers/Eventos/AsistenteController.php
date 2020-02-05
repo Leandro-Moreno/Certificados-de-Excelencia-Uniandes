@@ -196,10 +196,10 @@ class AsistenteController extends Controller
      */
     public function Enviocertificados($id)
     {
-      $nombreEvento = Evento::where('id',$id)->first()->nombre;
         $asistencias = Asistente::where('evento_id', $id)->get();
         foreach ($asistencias as $asistencia) {
-            $asistencia->usuarios->notify(new UsuarioNuevo($nombreEvento));
+          $nombre = $asistencia->usuarios->name . " " . $asistencia->usuarios->name2;
+            $asistencia->usuarios->notify(new UsuarioNuevo($nombre));
         }
         return redirect()->route('asistentes')->withStatus(__('Mensajes enviados con éxito.'));
     }

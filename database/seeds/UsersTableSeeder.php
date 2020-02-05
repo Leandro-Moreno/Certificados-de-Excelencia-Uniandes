@@ -14,20 +14,10 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'rol_id' => '1',
-            'name' => 'Jorge',
-            'email' => 'je.peralta@uniandes.edu.co',
-            'email_verified_at' => now(),
-            'password' => Hash::make('111111'),
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-
-        DB::table('users')->insert([
-            'rol_id' => '3',
             'name' => 'Leandro',
             'email' => 'le.moreno910@uniandes.edu.co',
             'email_verified_at' => now(),
-            'password' => Hash::make('111111'),
+            'password' => Hash::make('h}-ezWGst*57q+r!'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -40,7 +30,7 @@ class UsersTableSeeder extends Seeder
             'apellido2' => 'Garcia',
             'email' => 'lc.reyes@uniandes.edu.co',
             'email_verified_at' => now(),
-            'password' => Hash::make('111111'),
+            'password' => Hash::make('h}-ezWGst*57q+r!'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -53,7 +43,7 @@ class UsersTableSeeder extends Seeder
             'apellido2' => 'Montoya',
             'email' => 'p.gonzalezm@uniandes.edu.co',
             'email_verified_at' => now(),
-            'password' => Hash::make('111111'),
+            'password' => Hash::make('h}-ezWGst*57q+r!'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -65,7 +55,7 @@ class UsersTableSeeder extends Seeder
             'apellido2' => 'Barros',
             'email' => 'da.paezb@uniandes.edu.co',
             'email_verified_at' => now(),
-            'password' => Hash::make('111111'),
+            'password' => Hash::make('h}-ezWGst*57q+r!'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -78,7 +68,7 @@ class UsersTableSeeder extends Seeder
             'apellido2' => 'Bolaños',
             'email' => 'p-estrel@uniandes.edu.co',
             'email_verified_at' => now(),
-            'password' => Hash::make('111111'),
+            'password' => Hash::make('h}-ezWGst*57q+r!'),
             'created_at' => now(),
             'updated_at' => now()
         ]);

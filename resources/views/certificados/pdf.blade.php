@@ -460,7 +460,7 @@ body {
 	<span>Universidad de los Andes | Vigilada Mineducación. <br/>Reconocimiento como Universidad: Decreto 1297 del 30 de mayo de 1964.<br/>Reconocimiento personería jurídica: Resolución 28 del 23 de febrero de 1949 Minjusticia.</span>
 </div>
 <div id="La_autenticidad_de_este_docume">
-	<span>La autenticidad de este documento puede ser verificada en la página web http://certificadosingenieria.uniandes.edu.co</span>
+	<span>La autenticidad de este documento puede ser verificada en la página web https://seminariosvirtualesdeexcelencia.uniandes.edu.co/</span>
 </div>
 <div id="Bogot__D_C___Colombia">
 	<span>Bogotá D.C., Colombia</span>

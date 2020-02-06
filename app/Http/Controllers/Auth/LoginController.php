@@ -61,9 +61,13 @@ class LoginController extends Controller
          $givenName  =  explode(" ", $user->user["givenName"]);
          $surname  =  explode(" ", $user->user["surname"]);
          $jobTitle  = $user->user["jobTitle"];
-         User::where('email',$user->email)
-                           ->first()
-                           ->update(array(
+         $usuario = User::where('email',$user->email)
+                           ->first();
+         if (!$usuario) {
+           session()->flash('message', 'Usuario no existe');
+           return redirect('login');
+         }
+         $usuario->update(array(
                              'name' => $givenName[0],
                              'name2' => $givenName[1],
                              'apellido' => $surname[0],

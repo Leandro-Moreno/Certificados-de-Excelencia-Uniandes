@@ -63,7 +63,7 @@ class LoginController extends Controller
          $jobTitle  = $user->user["jobTitle"];
          $usuario = User::where('email',$user->email)
                            ->first();
-         if (!$user) {
+         if (!$usuario) {
            session()->flash('message', 'Usuario no existe');
            return redirect('login');
          }

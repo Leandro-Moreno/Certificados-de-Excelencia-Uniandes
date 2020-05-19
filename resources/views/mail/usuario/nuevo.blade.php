@@ -4,7 +4,7 @@ Cordial saludo,
 
 Gracias por asistir a los Seminarios Virtuales de Excelencia de la Facultad de Ingeniería de la Universidad de los Andes.
 
-Si no tiene cuenta para descargar su certificado,
+Si no tienes cuenta para descargar tu certificado,
 <?php
 $url=url('/login');
 ?>
@@ -14,13 +14,13 @@ Cree una cuenta y una contraseña AQUÍ
 <?php
 $url=url('/login');
 ?>
-Si tiene ya tiene una cuenta activa,
+Si ya tienes una cuenta Uniandes activa,
 @component('mail::button', ['url' => $url])
 Descargue su certificado AQUÍ
 @endcomponent
 
-_Atentamente,_<br>
-_Facultad de Ingeniería_
-_Universidad de Los Andes_
-_Bogotá D.C., Colombia_
+Atentamente,<br>
+Facultad de Ingeniería<br>
+Universidad de Los Andes<br>
+Bogotá D.C., Colombia<br>
 @endcomponent

@@ -45,7 +45,10 @@ class UsuarioNuevo extends Notification
     {
 
         $correo = Correo::first();
-        return (new MailMessage)->markdown('mail.usuario.nuevo', ['nombreEvento' => $this->nombreEvento]);
+        return (new MailMessage)
+            ->markdown('mail.usuario.nuevo', ['nombreEvento'
+                            => $this->nombreEvento])
+            ->subject('Descarga tu certificado del Seminario Virtual de Excelencia');
     }
 
     /**

@@ -48,7 +48,7 @@ class UsuarioNuevo extends Notification
         return (new MailMessage)
             ->markdown('mail.usuario.nuevo', ['nombreEvento'
                             => $this->nombreEvento])
-            ->subject('New Invoice');
+            ->subject('Descargue su certificado del Seminario Virtual de Excelencia');
     }
 
     /**

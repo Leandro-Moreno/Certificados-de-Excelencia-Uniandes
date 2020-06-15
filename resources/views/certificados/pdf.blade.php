@@ -121,7 +121,7 @@ body {
 	opacity: 1;
 	position: absolute;
 	left: 302.99px;
-	top: 220px;
+	top: 245px;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;

@@ -72,7 +72,7 @@ body {
 	opacity: 1;
 	position: absolute;
 	left: 6.306px;
-	top: 278.2px;
+	top: 250px;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
@@ -87,17 +87,28 @@ body {
 	font-size: 47.27777862548828px;
 	color: rgba(0,0,0,1);
 }
-#Titulo_Evento {
-	opacity: 1;
+#contenedor_Titulo{
 	position: absolute;
 	left: 17.451px;
-	top: 410.437px;
+	top: 110px;
+}
+#Titulo_Evento {
+
+	margin: 0;
+  position: absolute;
+	top: 50%;
+  transform: translateY(-50%);
+
+	opacity: 1;
+	vertical-align: middle;
+	/* background-color: red; */
+	display: block;
+	/* border: 1px solid red; */
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
 	width: 891.321px;
-	height: 71.996px;
-	line-height: 42.872005462646484px;
+	height: 100px;
+	line-height: 35.872005462646484px;
 	margin-top: -3.5726680755615234px;
 	text-align: center;
 	font-family: 'DaxBold';
@@ -110,7 +121,7 @@ body {
 	opacity: 1;
 	position: absolute;
 	left: 302.99px;
-	top: 256.757px;
+	top: 220px;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
@@ -130,7 +141,7 @@ body {
 	opacity: 1;
 	position: absolute;
 	left: 252.995px;
-	top: 372.53px;
+	top: 320px;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
@@ -324,15 +335,14 @@ body {
 	opacity: 1;
 	position: absolute;
 	left: 236.04px;
-	top: 722.726px;
+	top: 710.726px;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
 	width: 454.144px;
 	height: 14.673px;
 	line-height: 9.966672897338867px;
 	margin-top: -0.8305563926696777px;
-	text-align: right;
+	text-align: center;
 	font-family: 'DaxMedium';
 	font-style: normal;
 	font-weight: normal;
@@ -422,8 +432,10 @@ body {
 	 <span>{{$asistencia->usuarios->apellido2}}</span>
 		@endisset
 </div>
-<div id="Titulo_Evento">
-	<span>{{$asistencia->eventos->nombre}}</span>
+<div id="contenedor_Titulo">
+	<div id="Titulo_Evento">
+		<span>{{$asistencia->eventos->nombre}}</span>
+	</div>
 </div>
 <div id="certifican_que">
 	<span>certifican que</span>

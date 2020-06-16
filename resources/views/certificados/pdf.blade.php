@@ -62,17 +62,17 @@ body {
 	line-height: 35.77777862548828px;
 	margin-top: -1.9422245025634766px;
 	text-align: center;
-	font-family: 'DaxBold';
+	font-family: 'DaxMedium';
 	font-style: normal;
-	font-weight: bold;
-	font-size: 31.893329620361328px;
+	font-weight: 500;
+	font-size: 30px;
 	color: rgba(0,0,0,1);
 }
 #Nombre_Participante {
 	opacity: 1;
 	position: absolute;
 	left: 6.306px;
-	top: 250px;
+	top: 263px;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
@@ -84,7 +84,7 @@ body {
 	font-family: 'DaxBold';
 	font-style: normal;
 	font-weight: bold;
-	font-size: 47.27777862548828px;
+	font-size: 45px;
 	color: rgba(0,0,0,1);
 }
 #contenedor_Titulo{
@@ -114,14 +114,14 @@ body {
 	font-family: 'DaxBold';
 	font-style: normal;
 	font-weight: bold;
-	font-size: 35.72666931152344px;
+	font-size: 34px;
 	color: rgba(0,0,0,1);
 }
 #certifican_que {
 	opacity: 1;
 	position: absolute;
 	left: 302.99px;
-	top: 245px;
+	top: 255px;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
@@ -133,7 +133,7 @@ body {
 	font-family: 'DaxMedium';
 	font-style: normal;
 	font-weight: normal;
-	font-size: 20.393329620361328px;
+	font-size: 18px;
 	color: rgba(0,0,0,1);
 	letter-spacing: 0.02px;
 }
@@ -141,7 +141,7 @@ body {
 	opacity: 1;
 	position: absolute;
 	left: 252.995px;
-	top: 320px;
+	top: 335px;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
@@ -153,7 +153,7 @@ body {
 	font-family: 'DaxMedium';
 	font-style: normal;
 	font-weight: normal;
-	font-size: 20.393329620361328px;
+	font-size: 20px;
 	color: rgba(0,0,0,1);
 	letter-spacing: 0.02px;
 }
@@ -182,7 +182,7 @@ body {
 	font-family: 'DaxMedium';
 	font-style: normal;
 	font-weight: normal;
-	font-size: 20.393329620361328px;
+	font-size: 20px;
 	color: rgba(0,0,0,1);
 	letter-spacing: 0.02px;
 }
@@ -224,7 +224,7 @@ body {
 	font-family: 'DaxBold';
 	font-style: normal;
 	font-weight: bold;
-	font-size: 16.559999465942383px;
+	font-size: 16px;
 	color: rgba(0,0,0,1);
 	letter-spacing: 0.02px;
 }

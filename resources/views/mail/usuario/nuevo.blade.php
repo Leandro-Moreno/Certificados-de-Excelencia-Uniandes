@@ -5,7 +5,7 @@ Gracias por asistir a los Seminarios Virtuales de Excelencia de la Facultad de I
 
 Tu cuenta ya ha sido creada, para activar la cuenta debes restablecer la contraseña,
 <?php
-$url=url('/login');
+$url=url('/password/reset');
 ?>
 @component('mail::button', ['url' => $url])
 Activa tu cuenta AQUÍ

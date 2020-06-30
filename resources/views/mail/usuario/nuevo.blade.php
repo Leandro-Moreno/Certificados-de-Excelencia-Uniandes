@@ -1,20 +1,19 @@
 @component('mail::message')
-Cordial saludo,
-{{$nombreEvento}}
+Cordial saludo, {{$nombreAsistente}}
 
 Gracias por asistir a los Seminarios Virtuales de Excelencia de la Facultad de Ingeniería de la Universidad de los Andes.
 
-Si no tienes cuenta para descargar tu certificado,
+Tu cuenta ya ha sido creada, para activar la cuenta debes restablecer la contraseña,
 <?php
 $url=url('/login');
 ?>
 @component('mail::button', ['url' => $url])
-Cree una cuenta y una contraseña AQUÍ
+Activa tu cuenta AQUÍ
 @endcomponent
 <?php
 $url=url('/login');
 ?>
-Si ya tienes una cuenta Uniandes activa,
+Si ya tienes una cuenta activa,
 @component('mail::button', ['url' => $url])
 Descargue su certificado AQUÍ
 @endcomponent

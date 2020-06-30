@@ -11,7 +11,7 @@ use App\Correo;
 
 class UsuarioNuevo extends Notification
 {
-    protected $nombreEvento;
+    protected $nombreAsistente;
     use Queueable;
 
     /**
@@ -21,7 +21,7 @@ class UsuarioNuevo extends Notification
      */
     public function __construct($nombre)
     {
-      $this->nombreEvento  = $nombre;
+      $this->nombreAsistente  = $nombre;
      }
 
     /**
@@ -43,11 +43,10 @@ class UsuarioNuevo extends Notification
      */
     public function toMail($notifiable)
     {
-
         $correo = Correo::first();
         return (new MailMessage)
-            ->markdown('mail.usuario.nuevo', ['nombreEvento'
-                            => $this->nombreEvento])
+            ->markdown('mail.usuario.nuevo', ['nombreAsistente'
+                            => $this->nombreAsistente])
             ->subject('Descarga tu certificado del Seminario Virtual de Excelencia');
     }
 

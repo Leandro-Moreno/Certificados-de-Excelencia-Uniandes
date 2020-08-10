@@ -94,7 +94,7 @@ e.preventDefault();
                              <input type="text" class="form-control" id="Inputname2" aria-describedby="name2Help" placeholder="Segundo nombre" name="name2">
                            </div>
                            <div class="col">
-                             <input type="text" class="form-control" id="Inputapellido" aria-describedby="apellidoHelp" placeholder="Segundo apellido" name="apellido">
+                             <input type="text" class="form-control" id="Inputapellido" aria-describedby="apellidoHelp" placeholder="Primer apellido" name="apellido">
                            </div>
                            </div>
                            <div class="form-row">

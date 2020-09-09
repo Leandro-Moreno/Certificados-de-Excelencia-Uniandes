@@ -47,7 +47,7 @@
                   <div class="col-sm-7">
                     <div class="form-group{{ $errors->has('varios_horarios') ? ' has-danger' : '' }}">
                       <label class="form-check-label">
-                        <input class="form-check-input" id="varios_horarios" name="varios_horarios" {{ $evento->varios_horarios==1 ? 'checked="checked" ' : '' }} type="checkbox" value="{{$evento->varios_horarios}}">
+                        <input class="form-check-input" id="varios_horarios" name="varios_horarios" {{ $evento->varios_horarios==1 ? 'checked="checked" ' : '' }} type="checkbox" value="1">
                         <span class="form-check-sign">
                           <span class="check"></span>
                         </span>

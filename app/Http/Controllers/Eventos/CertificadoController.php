@@ -101,7 +101,7 @@ class CertificadoController extends Controller
               'imagen2'  => $imagen2]
             )
             ->setPaper('letter', 'landscape');
-            return $pdf->stream('certificado.pdf');
+            return $pdf->download('certificado.pdf');
         }
         if (Auth::user()->rol_id == 3) {
             if (Auth::user()->id == $usuario->id) {

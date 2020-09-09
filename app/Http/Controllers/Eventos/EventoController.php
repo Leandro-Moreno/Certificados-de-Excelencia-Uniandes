@@ -47,6 +47,8 @@ class EventoController extends Controller
                 'firma_id' => $request->firma,
                 'firma2_id' => $request->firma2,
                 'fecha' => $request->fecha,
+                'fecha_final' => $request->fecha_final,
+                'varios_horarios' => isset($request->varios_horarios)?$request->varios_horarios:0,
                 'hora' => $request->hora,
             ]
         );

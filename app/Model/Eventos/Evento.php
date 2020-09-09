@@ -14,7 +14,7 @@ class Evento extends Model
      * @var array
      */
     protected $fillable = [
-        'estado', 'nombre', 'descripcion', 'imagen', 'fecha', 'firma_id','firma2_id', 'hora'
+        'estado', 'nombre', 'descripcion', 'imagen', 'fecha', 'fecha_final', 'varios_horarios', 'firma_id','firma2_id', 'hora'
     ];
 
     public function firma()

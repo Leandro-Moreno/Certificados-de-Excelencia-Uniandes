@@ -56,6 +56,20 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="row">
+                  <label class="col-sm-2 col-form-label" for="input-sesiones">{{ __('¿Es un evento con diferentes sesiones?') }}</label>
+                  <div class="col-sm-7">
+                    <div class="form-group{{ $errors->has('varios_horarios') ? ' has-danger' : '' }}">
+                      <label class="form-check-label">
+                        <input class="form-check-input" id="varios_horarios" name="varios_horarios" type="checkbox" value="1">
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
                 <div class="row">
                   <label class="col-sm-2 col-form-label" for="input-fecha">{{ __('Fecha') }}</label>
                   <div class="col-sm-7">
@@ -67,11 +81,22 @@
                     </div>
                   </div>
                 </div>
+                <div class="row" id="div_fecha_final" style="display:none;">
+                  <label class="col-sm-2 col-form-label" for="input-fecha_final">{{ __('Fecha Final') }}</label>
+                  <div class="col-sm-7">
+                    <div class="form-group{{ $errors->has('fecha_final') ? ' has-danger' : '' }}">
+                      <input class="form-control{{ $errors->has('fecha_final') ? ' is-invalid' : '' }}" input type="date" name="fecha_final" id="input-fecha_final" placeholder="{{ __('Fecha Final') }}" value="{{ old('fecha_final') }}"  required/>
+                      @if ($errors->has('fecha_final'))
+                        <span id="name-error" class="error text-danger" for="input-name">{{ $errors->first('fecha_final') }}</span>
+                      @endif
+                    </div>
+                  </div>
+                </div>
                 <div class="row">
                   <label class="col-sm-2 col-form-label" for="input-hora">{{ __('Duración') }}</label>
                   <div class="col-sm-7">
                     <div class="form-group">
-                      <input class="form-control" name="hora" id="input-hora" type="number" placeholder="{{ __('Hora') }}" value="{{ old('hora') }}"  min="0" required step="any" />
+                      <input class="form-control" name="hora" id="input-hora" type="number" placeholder="{{ __('Duración') }}" value="{{ old('hora') }}"  min="0" required step="any" />
                     </div>
                   </div>
                 </div>
@@ -138,4 +163,25 @@
       </div>
     </div>
   </div>
+  @push('js')
+  <script type="text/javascript">
+
+  $(".toggle").click(function(e){
+    if($("#estadoTogg").prop( "checked" )){
+
+    }
+      $("#estadoTogg").prop( "checked" )?$( "#toggContenido" ).text("No activo"):$( "#toggContenido" ).text("Activo");
+
+      });
+  $("#varios_horarios").click(function(e){
+    if($("#varios_horarios").prop( "checked" )){
+      $("#div_fecha_final").show();
+    }
+    else{
+      $("#div_fecha_final").hide();
+    }
+
+      });
+  </script>
+  @endpush
 @endsection

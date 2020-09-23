@@ -162,7 +162,7 @@ body {
 	position: absolute;
 	width: 438.985px;
 	height: 77.144px;
-	left: 243.119px;
+	left: 163.119px;
 	top: 471.844px;
 	overflow: visible;
 }
@@ -174,7 +174,7 @@ body {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	width: 439.985px;
+	width: 600.985px;
 	height: 77.144px;
 	line-height: 24.471996307373047px;
 	margin-top: -2.0393333435058594px;
@@ -445,7 +445,12 @@ body {
 </div>
 <div id="Grupo_1">
 	<div id="fecha">
-		<span>Realizado el {{$fechaEvento}}, con una duración de {{$asistencia->eventos->hora}} horas.</span>
+		@if($asistencia->eventos->varios_horarios == 1)
+		<span>Realizado del {{$fechaEvento}} al {{$fechaFinal}},</span>
+		@else
+		<span>Realizado el {{$fechaEvento}},</span>
+		@endif
+		<span>con una duración de {{$asistencia->eventos->hora}} horas.</span>
 	</div>
 </div>
 <svg class="L_nea_1">

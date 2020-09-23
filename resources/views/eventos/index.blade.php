@@ -51,7 +51,7 @@
                             {{ $dato->nombre }}
                           </td>
                           <td>
-                            {{ $dato->fecha }}
+                            {{ $dato->fecha }} @if( $dato->varios_horarios == 1 ) -> {{$dato->fecha_final}}  @endif
                           </td>
                           <td>
                             {{ $dato->hora }}

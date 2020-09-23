@@ -47,6 +47,8 @@ class EventoController extends Controller
                 'firma_id' => $request->firma,
                 'firma2_id' => $request->firma2,
                 'fecha' => $request->fecha,
+                'fecha_final' => $request->fecha_final,
+                'varios_horarios' => isset($request->varios_horarios)?$request->varios_horarios:0,
                 'hora' => $request->hora,
             ]
         );
@@ -80,7 +82,9 @@ class EventoController extends Controller
         $evento->descripcion = $request->descripcion;
         $evento->firma_id = $request->firma;
         $evento->firma2_id = $request->firma2;
+        $evento->varios_horarios = isset($request->varios_horarios)?$request->varios_horarios:0;
         $evento->fecha = $request->fecha;
+        $evento->fecha_final = $request->fecha_final;
         $evento->hora = $request->hora;
         $evento->save();
         return redirect()->route('eventos')->withStatus(__('Evento actualizado con éxito.'));

@@ -83,6 +83,11 @@ class CertificadoController extends Controller
 
         $fecha  = Date::createFromFormat('Y-m-d', $evento->fecha, 'America/Bogota');
         $resultado = $fecha->format('j \d\e F \d\e Y');
+        $fechaFinal = $resultado;
+        if(isset($evento->fecha_final)){
+          $fecha  = Date::createFromFormat('Y-m-d', $evento->fecha_final, 'America/Bogota');
+          $fechaFinal = $fecha->format('j \d\e F \d\e Y');
+        }
         $imagen = "storage/firmas/".$evento->firma->imagen;
         $imagen2 = "storage/firmas/".$evento->firma2->imagen;
 
@@ -91,6 +96,7 @@ class CertificadoController extends Controller
                 'certificados.pdf',
                 ['asistencia' => $asistencia,
               'fechaEvento'=> $resultado,
+              'fechaFinal'=> $fechaFinal,
               'imagen'  => $imagen,
               'imagen2'  => $imagen2]
             )

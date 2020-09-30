@@ -109,6 +109,7 @@ class CertificadoController extends Controller
                     'certificados.pdf',
                     ['asistencia' => $asistencia,
                   'fechaEvento'=> $resultado,
+                  'fechaFinal'=> $fechaFinal,
                   'imagen'  => $imagen,
                   'imagen2'  => $imagen2]
                 )
